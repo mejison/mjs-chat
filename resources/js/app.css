@@ -1,0 +1,155 @@
+/* reset */
+html, 
+body,
+#app {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.container {
+  background-color: #6e5694;
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+/* end/reset */
+
+/* common */
+
+/* end/common */
+
+/* bottoms */
+.btn,
+.btn:focus,
+.btn:active {
+  outline: none;
+}
+/* end/bottoms */
+
+/* forms */
+@-webkit-keyframes autofill {
+  to {
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+  }
+}
+
+.sign-in input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+input.has-error {
+  border-color:#941f12 !important;
+}
+
+.vue-notify { 
+  font-family: "Proxima Nova Rg" !important;
+}
+
+.vue-notify.success .toasted {
+  background: radial-gradient(to right, rgb(65, 195, 208), rgb(28, 217, 128)) !important;
+} 
+
+.vue-notify.error .toasted {
+  background: linear-gradient(to right, #FF4B2B, #FF416C) !important;
+}
+
+.vue-notify.warning .toasted {
+  background: linear-gradient(to right, #fdc830, #f37335) !important;
+}
+/* end/forms */
+
+/* menu-bar */
+.menu-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #b2b2b2;
+  background-color: #fff;
+}
+
+.menu-bar .item img {
+  object-fit: scale-down;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  object-position: center center;
+}
+
+.menu-bar .item.active img {
+  filter: invert(.7);
+}
+/* end/menu-bar */
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #6e5694;  
+}
+
+.navbar .action.left {
+  margin-left: 20px;
+}
+
+.navbar .action.right {
+  margin-right: 20px;
+}
+
+.navbar .action {
+  padding: 7px 0;
+}
+
+.navbar .action a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Montserrat, Arial;
+  font-weight: 500;
+}
+
+.navbar .action img {
+  object-fit: cover;
+  object-position: center;
+  width: 27px;
+}
+
+.navbar .title h1 {  
+  font-size: 18px;
+  font-family: Montserrat, Arial;
+  font-weight: bold;
+}
+
+.navbar .action a, 
+.navbar .title h1 {  
+  color: #fff;
+}
+/* end/navbar */
