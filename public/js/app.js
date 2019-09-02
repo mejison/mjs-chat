@@ -43444,7 +43444,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 var isAuth = function isAuth(to, from, next) {
   var token = vue_cookie__WEBPACK_IMPORTED_MODULE_2___default.a.get('token');
   token ? next() : next({
-    name: 'profile'
+    name: 'welcome'
   });
 };
 

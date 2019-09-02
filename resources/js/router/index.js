@@ -20,7 +20,7 @@ import {
 
 const isAuth = (to, from, next) => {
   let token = VueCookie.get('token')  
-  token ? next() : next({name: 'profile'})
+  token ? next() : next({name: 'welcome'})
 }
 
 export default new VueRouter({
