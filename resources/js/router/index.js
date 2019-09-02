@@ -10,34 +10,44 @@ import {
   Login,
   Register,
   Dashboard,
+  Profile,
 } from '../views'
 
 import {
   Public,
+  Private,
 } from '../layouts'
 
 const isAuth = (to, from, next) => {
   let token = VueCookie.get('token')  
-  token ? next() : next({name: 'welcome'})
+  token ? next() : next({name: 'profile'})
 }
 
 export default new VueRouter({
   mode: 'history',  
   routes: [
     {
-      path: '', 
-      name: 'home',
-      component: Public,
+      path: '',
+      name: 'auth',
+      beforeEnter: isAuth,
+      component: Private,
       children: [
         {
           path: '',
-          name: 'dashboard',
-          component: Dashboard,
+          name: 'profile',
+          component: Profile,
           beforeEnter: isAuth,
           meta: {
             transition: 'fade',
           }
         },
+      ],
+    },
+    {
+      path: '', 
+      name: 'home',
+      component: Public,
+      children: [        
         {
           path: '',
           name: 'welcome',
@@ -63,7 +73,7 @@ export default new VueRouter({
           }
         },
       ]
-    },    
+    },
     {
       path: '*',
       name: 'not-found',

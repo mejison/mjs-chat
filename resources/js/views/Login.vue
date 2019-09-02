@@ -55,34 +55,26 @@ export default {
       current: 0,
     }
   },
+  mounted() {
+    const firstField = this.$validator.fields.items[0].name
+    this.touched = [firstField];
+  },
   methods: {
     ...mapActions('Auth', ['login']),
-    onSubmitSignIn() {
-      const fields = Object.keys(this.signin)      
-      if (fields[this.current]) {
-        this.$validator.validate(fields[this.current]).then((r) => {
-          if (r && fields[this.current]) {
-            this.current ++
-            this.onSubmitSignIn()            
-          }
-        })
-      }
-
-      this.$nextTick(() => {
-        const errors = this.errors.all()
-        
-        if ( ! errors.length) {
+    onSubmitSignIn() {      
+      this.$validator.validate().then(r => {
+        if (r) {
           this.login(this.signin).then(r => {
             let { data } = r.data
             if (data && data.access_token) {
               this.$cookie.set('token', data.access_token)
               setTimeout(() => {
-                this.$router.push({name: 'dashboard'})
+                this.$router.push({name: 'profile'})
               }, 2000)
             }
           })
         }
-      })
+      })      
     },
   }
 }

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'photo'
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = [
+        'avatar'
+    ];
+
+    public function getAvatarAttribute() {
+        $photo = $this->photo;
+        return ! empty($photo) ? str_replace("public/", "/storage/", $photo) : '//placehold.it/150';
+    }
 }
