@@ -5,6 +5,7 @@ const { env } = process
 require('laravel-echo-server').run({
   authHost: env.APP_URL,
   authEndpoint: '/broadcasting/auth',
+  port: 6003,
   devMode: true,
   database: 'redis',
   databaseConfig: {
