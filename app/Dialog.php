@@ -14,6 +14,11 @@ class Dialog extends Model
         return $this->hasOne(User::class, 'id', 'user_to_id');
     }
 
+    public function sender()
+    {
+        return $this->hasOne(User::class, 'id', 'user_from_id');
+    }
+
     public function scopeMe() {
         $me = auth()->user();
         $this->where('user_from_id', $me->id)->orWhere('user_to_id', $me->id);

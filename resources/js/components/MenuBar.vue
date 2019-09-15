@@ -9,10 +9,10 @@
     </div>
     <div 
       class="item" 
-      :class="{'active': $route.name == 'chat'}"
-      @click="$router.push({name: 'chat'})"
+      :class="{'active': $route.name == 'dialogs'}"
+      @click="$router.push({name: 'dialogs'})"
       >
-      <img src="/images/menu-bar/chat.png" alt="chat" />
+      <img src="/images/menu-bar/chat.png" alt="dialogs" />
     </div>
     <div 
       class="item" 

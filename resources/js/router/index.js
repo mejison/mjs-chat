@@ -11,6 +11,8 @@ import {
   Register,
   Dashboard,
   Profile,
+  Chat,
+  Dialogs,
 } from '../views'
 
 import {
@@ -41,6 +43,24 @@ export default new VueRouter({
             transition: 'fade',
           }
         },
+        {
+          path: 'dialogs',
+          name: 'dialogs',
+          component: Dialogs,
+          beforeEnter: isAuth,
+          meta: {
+            transition: 'fade',
+          }
+        },
+        {
+          path: 'chat/:dialog',
+          name: 'chat',
+          component: Chat,
+          beforeEnter: isAuth,
+          meta: {
+            transition: 'slide-right',
+          },
+        }
       ],
     },
     {

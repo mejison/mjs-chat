@@ -10,9 +10,7 @@ const Auth = {
   },
   actions: {
     register({ commit }, payload) {
-      return api.register(payload).then(r => {
-        // ...
-      })
+      return api.register(payload)
     },
     login({ commit }, payload) {
       return api.login(payload)

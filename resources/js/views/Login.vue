@@ -27,7 +27,7 @@
           :class="{'has-error': errors.has('password')}"
           v-model="signin.password"
         />
-        <button type="submit" class="btn">sigin in</button>
+        <l-button type="submit" class="btn" :spinner="spinner">sigin in</l-button>        
       </form>        
     </div>
     <socials />
@@ -39,15 +39,16 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import { Socials } from '../components';
-
+import { Socials, lButton } from '../components';
 export default {
   name: 'Login',
   components: {
-    Socials,
+    'socials': Socials,
+    'l-button': lButton,
   },
   data() {
     return {
+      spinner: false,
       signin: {
         email: '',        
         password: '',
@@ -61,10 +62,12 @@ export default {
   },
   methods: {
     ...mapActions('Auth', ['login']),
-    onSubmitSignIn() {      
+    onSubmitSignIn() {
+      this.spinner = true
       this.$validator.validate().then(r => {
         if (r) {
           this.login(this.signin).then(r => {
+            this.spinner = false
             let { data } = r.data
             if (data && data.access_token) {
               this.$cookie.set('token', data.access_token)
@@ -73,8 +76,10 @@ export default {
               }, 2000)
             }
           })
+          return
         }
-      })      
+        this.spinner = false
+      })
     },
   }
 }

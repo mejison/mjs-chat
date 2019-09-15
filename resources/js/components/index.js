@@ -1,11 +1,9 @@
-import Dialogs from './Dialogs';
-import Messages from './Messages';
 import Slider from './Slider';
 import Socials from './Socials';
+import lButton from './lButton';
 
 export {
-  Dialogs,
-  Messages,
   Slider,
   Socials,
+  lButton,
 }

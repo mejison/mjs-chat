@@ -1808,51 +1808,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dialogs.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dialogs.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Dialogs',
-  mounted: function mounted() {
-    this.getDialogs();
-  },
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Messages', ['getDialogs', 'setCurrentDialog']), {
-    onClickDialog: function onClickDialog(d) {
-      this.setCurrentDialog(d);
-    }
-  }),
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Messages', ['dialogs']))
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MenuBar.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MenuBar.vue?vue&type=script&lang=js& ***!
@@ -1900,69 +1855,6 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   methods: {}
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Messages.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Messages.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Messages',
-  data: function data() {
-    return {
-      message: ''
-    };
-  },
-  mounted: function mounted() {
-    this.getMessages(this.current);
-    window.Echo["private"]("dialog.".concat(this.current.id)).listen("MessageSend", this.onReceiveMessage);
-  },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Messages', ['current', 'messages'])),
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Messages', ['sendMessage', 'getMessages']), {
-    onSendMessage: function onSendMessage() {
-      this.sendMessage({
-        dialog: this.current,
-        data: {
-          message: this.message,
-          recipient_id: this.current.user_to_id
-        }
-      });
-    },
-    onReceiveMessage: function onReceiveMessage(e) {
-      console.log(e);
-    }
-  })
 });
 
 /***/ }),
@@ -2151,6 +2043,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/lButton.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'lbutton',
+  props: ['spinner']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/layouts/Private.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layouts/Private.vue?vue&type=script&lang=js& ***!
@@ -2216,6 +2130,139 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Chat.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mixins/profile */ "./resources/js/mixins/profile.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Chat',
+  mixins: [_mixins_profile__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  data: function data() {
+    return {
+      message: ''
+    };
+  },
+  mounted: function mounted() {
+    this.getMessages(this.$route.params.dialog);
+    this.getDialog(this.$route.params.dialog);
+    window.Echo["private"]("dialog.".concat(this.$route.params.dialog)).listen("MessageSend", this.onReceiveMessage);
+  },
+  watch: {
+    messages: function messages() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        _this.scrollToDown();
+      });
+    }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Messages', ['messages', 'dialog']), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])('Profile', ['profile'])),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])('Messages', ['sendMessage', 'getMessages', 'getDialog']), {
+    isMeMessage: function isMeMessage(message) {
+      return message.sender_id === this.profile.id;
+    },
+    onSendMessage: function onSendMessage() {
+      var _this2 = this;
+
+      this.sendMessage({
+        dialog: this.dialog,
+        data: {
+          message: this.message,
+          recipient_id: this.dialog.opponent.id
+        }
+      }).then(function (r) {
+        _this2.message = '';
+      });
+    },
+    onReceiveMessage: function onReceiveMessage(e) {
+      this.getMessages(this.$route.params.dialog);
+    },
+    scrollToDown: function scrollToDown() {
+      var element = document.getElementById('messages');
+      window.scrollTo({
+        top: element.offsetHeight,
+        behavior: "smooth"
+      });
+    }
+  })
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dashboard.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -2247,6 +2294,124 @@ __webpack_require__.r(__webpack_exports__);
       }, 500);
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dialogs.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_MenuBar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MenuBar.vue */ "./resources/js/components/MenuBar.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _mixins_profile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mixins/profile */ "./resources/js/mixins/profile.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    MenuBar: _components_MenuBar_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mixins: [_mixins_profile__WEBPACK_IMPORTED_MODULE_2__["default"]],
+  data: function data() {
+    return {
+      filter: {
+        query: ''
+      }
+    };
+  },
+  name: 'dialogs',
+  mounted: function mounted() {
+    this.getDialogs();
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])('Messages', ['getDialogs', 'setCurrentDialog']), {
+    onClickDialog: function onClickDialog(d) {
+      this.setCurrentDialog(d);
+      this.$router.push({
+        name: 'chat',
+        params: {
+          dialog: d.id
+        }
+      });
+    }
+  }),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])('Messages', ['dialogs']), {
+    dialogsFiltered: function dialogsFiltered() {
+      var _this = this;
+
+      return this.dialogs.filter(function (d) {
+        return d.opponent.name.toLowerCase().indexOf(_this.filter.query.toLowerCase()) + 1 || d.context_last_message.toLowerCase().indexOf(_this.filter.query.toLowerCase()) + 1;
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -2312,10 +2477,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Login',
   components: {
-    Socials: _components__WEBPACK_IMPORTED_MODULE_1__["Socials"]
+    'socials': _components__WEBPACK_IMPORTED_MODULE_1__["Socials"],
+    'l-button': _components__WEBPACK_IMPORTED_MODULE_1__["lButton"]
   },
   data: function data() {
     return {
+      spinner: false,
       signin: {
         email: '',
         password: ''
@@ -2331,9 +2498,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     onSubmitSignIn: function onSubmitSignIn() {
       var _this = this;
 
+      this.spinner = true;
       this.$validator.validate().then(function (r) {
         if (r) {
           _this.login(_this.signin).then(function (r) {
+            _this.spinner = false;
             var data = r.data.data;
 
             if (data && data.access_token) {
@@ -2346,7 +2515,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               }, 2000);
             }
           });
+
+          return;
         }
+
+        _this.spinner = false;
       });
     }
   })
@@ -2530,10 +2703,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Register',
   components: {
-    Socials: _components__WEBPACK_IMPORTED_MODULE_1__["Socials"]
+    Socials: _components__WEBPACK_IMPORTED_MODULE_1__["Socials"],
+    lButton: _components__WEBPACK_IMPORTED_MODULE_1__["lButton"]
   },
   data: function data() {
     return {
+      spinner: false,
       signup: {
         email: '',
         name: '',
@@ -2546,16 +2721,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     onSubmitSignUp: function onSubmitSignUp() {
       var _this = this;
 
+      this.spinner = true;
       this.$validator.validate().then(function (res) {
         if (res) {
-          _this.login(_this.signup).then(function (r) {
+          _this.register(_this.signup).then(function (r) {
+            _this.spinner = false;
             var data = r.data.data;
 
             if (data.access_token) {
               _this.$cookie.set('token', data.access_token);
+
+              setTimeout(function () {
+                _this.$router.push({
+                  name: 'profile'
+                });
+              }, 2000);
             }
           });
+
+          return;
         }
+
+        _this.spinner = false;
       });
     }
   })
@@ -4953,6 +5140,63 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.socials[data-v-61e83d0b] {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n}\n.socials span[data-v-61e83d0b] {\n  color: #fff;\n  font-family: \"Proxima Nova Rg\";\n  font-size: 15px;\n}\n.socials .socials-list[data-v-61e83d0b] {  \n  display: flex;\n  justify-content: space-between;\n}\n.socials .socials-list .soc img[data-v-61e83d0b] {\n  width: 34px;\n  height: 34px;\n  margin: 15px 5px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nbutton[data-v-5e7ff57a]  {\r\n  align-items: center;\r\n  display: flex;\r\n  justify-content: center;\n}\n.ld[data-v-5e7ff57a] {\r\n  margin: 0 5px;\n}\n.ld.running[data-v-5e7ff57a] {\r\n  -webkit-animation-play-state: running;\r\n  animation-play-state: running;\n}\n.ld-ball[data-v-5e7ff57a],\r\n.ld-ring[data-v-5e7ff57a],\r\n.ld-hourglass[data-v-5e7ff57a],\r\n.ld-loader[data-v-5e7ff57a],\r\n.ld-cross[data-v-5e7ff57a],\r\n.ld-square[data-v-5e7ff57a],\r\n.ld-pie[data-v-5e7ff57a],\r\n.ld-spinner[data-v-5e7ff57a] {\r\n  width: 1em;\r\n  height: 1em;\r\n  position: relative;\r\n  color: inherit;\r\n  display: inline-block;\n}\n.ld-ball[data-v-5e7ff57a]:after,\r\n.ld-ring[data-v-5e7ff57a]:after,\r\n.ld-hourglass[data-v-5e7ff57a]:after,\r\n.ld-loader[data-v-5e7ff57a]:after,\r\n.ld-cross[data-v-5e7ff57a]:after,\r\n.ld-square[data-v-5e7ff57a]:after,\r\n.ld-pie[data-v-5e7ff57a]:after,\r\n.ld-spinner[data-v-5e7ff57a]:after {\r\n  position: absolute;\r\n  margin: auto;\r\n  width: 100%;\r\n  height: 100%;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  content: \" \";\r\n  display: inline-block;\r\n  background: center center no-repeat;\r\n  background-size: cover;\n}\n.ld-ball[data-v-5e7ff57a]:after {\r\n  border-radius: 50%;\r\n  background: currentColor;\n}\n.ld-pie[data-v-5e7ff57a]:after {\r\n  width: 0;\r\n  height: 0;\r\n  border-radius: 50%;\r\n  border-style: solid;\r\n  border-width: 0.5em;\r\n  -webkit-background-clip: padding-box;\r\n  border-color: currentColor currentColor currentColor transparent;\n}\n.ld-ring[data-v-5e7ff57a]:after {\r\n  border-radius: 50%;\r\n  border-style: solid;\r\n  border-width: 0.15em;\r\n  -webkit-background-clip: padding-box;\r\n  border-color: currentColor currentColor currentColor transparent;\r\n  box-sizing: border-box;\n}\n.ld-hourglass[data-v-5e7ff57a]:after {\r\n  width: 0;\r\n  height: 0;\r\n  background: none;\r\n  border-radius: 50%;\r\n  border-style: solid;\r\n  border-width: 0.5em;\r\n  border-color: currentColor transparent currentColor transparent;\n}\n.ld-cross[data-v-5e7ff57a]:after {\r\n  width: 18%;\r\n  height: 18%;\r\n  background: currentColor;\r\n  box-shadow: 0 0.18em 0 1px currentColor, 0 -0.18em 0 1px currentColor, 0.18em 0 0 1px currentColor, -0.18em 0 0 1px currentColor, 0 0.36em 0 1px currentColor, 0 -0.36em 0 1px currentColor, 0.36em 0 0 1px currentColor, -0.36em 0 0 1px currentColor;\n}\n.ld-square[data-v-5e7ff57a]:after {\r\n  width: 90%;\r\n  height: 90%;\r\n  background: currentColor;\n}\n.ld-spinner[data-v-5e7ff57a]:after {\r\n  width: 20%;\r\n  height: 20%;\r\n  border-radius: 50%;\r\n  background: none;\r\n  box-shadow: 0 0.5em 0 0 currentColor,0 -.5em 0 0 currentColor,.5em 0 0 0 currentColor,-.5em 0 0 0 currentColor,.35355339059327373em .35355339059327373em 0 0 currentColor,-.35355339059327373em .35355339059327373em 0 0 currentColor,.35355339059327373em -.35355339059327373em 0 0 currentColor,-.35355339059327373em -.35355339059327373em 0 0 currentColor;\n}\n.ld-loader[data-v-5e7ff57a] {\r\n  background-size: cover;\n}\n@keyframes ld-blink-data-v-5e7ff57a {\n0% {\r\n    opacity: 1;\n}\n49% {\r\n    opacity: 1;\n}\n50% {\r\n    opacity: 0;\n}\n100% {\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes ld-blink-data-v-5e7ff57a {\n0% {\r\n    opacity: 1;\n}\n49% {\r\n    opacity: 1;\n}\n50% {\r\n    opacity: 0;\n}\n100% {\r\n    opacity: 0;\n}\n}\n.ld.ld-blink[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-blink-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-blink-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-blur-data-v-5e7ff57a {\n0% {\r\n    -webkit-filter: blur(0);\r\n            filter: blur(0);\n}\n50% {\r\n    -webkit-filter: blur(5px);\r\n            filter: blur(5px);\n}\n100% {\r\n    -webkit-filter: blur(0);\r\n            filter: blur(0);\n}\n}\n@-webkit-keyframes ld-blur-data-v-5e7ff57a {\n0% {\r\n    -webkit-filter: blur(0);\r\n            filter: blur(0);\n}\n50% {\r\n    -webkit-filter: blur(5px);\r\n            filter: blur(5px);\n}\n100% {\r\n    -webkit-filter: blur(0);\r\n            filter: blur(0);\n}\n}\n.ld.ld-blur[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-blur-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-blur-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-breath-data-v-5e7ff57a {\n0% {\r\n    transform: scale(0.86);\n}\n50% {\r\n    transform: scale(1.06);\n}\n100% {\r\n    transform: scale(0.86);\n}\n}\n@-webkit-keyframes ld-breath-data-v-5e7ff57a {\n0% {\r\n    transform: scale(0.86);\n}\n50% {\r\n    transform: scale(1.06);\n}\n100% {\r\n    transform: scale(0.86);\n}\n}\n.ld.ld-breath[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-breath-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-breath-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-broadcast-data-v-5e7ff57a {\n0% {\r\n    box-shadow: 0 0 0 3px rgba(0,0,0,0.9);\n}\n19% {\r\n    box-shadow: 0 0 0 2px rgba(0,0,0,0.7);\n}\n20% {\r\n    box-shadow: 0 0 0 6px rgba(0,0,0,0.8);\n}\n39% {\r\n    box-shadow: 0 0 0 5px rgba(0,0,0,0.6);\n}\n40% {\r\n    box-shadow: 0 0 0 9px rgba(0,0,0,0.7);\n}\n60% {\r\n    box-shadow: 0 0 0 8px rgba(0,0,0,0.6);\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n100% {\r\n    box-shadow: 0 0 0 0px rgba(0,0,0,0.2);\n}\n}\n@-webkit-keyframes ld-broadcast-data-v-5e7ff57a {\n0% {\r\n    box-shadow: 0 0 0 3px rgba(0,0,0,0.9);\n}\n19% {\r\n    box-shadow: 0 0 0 2px rgba(0,0,0,0.7);\n}\n20% {\r\n    box-shadow: 0 0 0 6px rgba(0,0,0,0.8);\n}\n39% {\r\n    box-shadow: 0 0 0 5px rgba(0,0,0,0.6);\n}\n40% {\r\n    box-shadow: 0 0 0 9px rgba(0,0,0,0.7);\n}\n60% {\r\n    box-shadow: 0 0 0 8px rgba(0,0,0,0.6);\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n100% {\r\n    box-shadow: 0 0 0 0px rgba(0,0,0,0.2);\n}\n}\n.ld.ld-broadcast[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-broadcast-data-v-5e7ff57a 1s infinite ease-out;\r\n  animation: ld-broadcast-data-v-5e7ff57a 1s infinite ease-out;\r\n  border-radius: 50%;\n}\n@keyframes ld-clock-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0deg);\n}\n8.333% {\r\n    transform: rotate(30deg);\n}\n16.667% {\r\n    transform: rotate(60deg);\n}\n25% {\r\n    transform: rotate(90deg);\n}\n33.333% {\r\n    transform: rotate(120deg);\n}\n41.667% {\r\n    transform: rotate(150deg);\n}\n50% {\r\n    transform: rotate(180deg);\n}\n58.333% {\r\n    transform: rotate(210deg);\n}\n66.667% {\r\n    transform: rotate(240deg);\n}\n75% {\r\n    transform: rotate(270deg);\n}\n83.333% {\r\n    transform: rotate(300deg);\n}\n91.667% {\r\n    transform: rotate(330deg);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes ld-clock-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0deg);\n}\n8.333% {\r\n    transform: rotate(30deg);\n}\n16.667% {\r\n    transform: rotate(60deg);\n}\n25% {\r\n    transform: rotate(90deg);\n}\n33.333% {\r\n    transform: rotate(120deg);\n}\n41.667% {\r\n    transform: rotate(150deg);\n}\n50% {\r\n    transform: rotate(180deg);\n}\n58.333% {\r\n    transform: rotate(210deg);\n}\n66.667% {\r\n    transform: rotate(240deg);\n}\n75% {\r\n    transform: rotate(270deg);\n}\n83.333% {\r\n    transform: rotate(300deg);\n}\n91.667% {\r\n    transform: rotate(330deg);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n.ld.ld-clock[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-clock-data-v-5e7ff57a 9s infinite cubic-bezier(0, 0.7, 0.3, 1);\r\n  animation: ld-clock-data-v-5e7ff57a 9s infinite cubic-bezier(0, 0.7, 0.3, 1);\n}\n@keyframes ld-cycle-data-v-5e7ff57a {\n0%, 50%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);\n}\n0% {\r\n    transform: rotate(0);\n}\n50% {\r\n    transform: rotate(180deg);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes ld-cycle-data-v-5e7ff57a {\n0%, 50%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);\n}\n0% {\r\n    transform: rotate(0);\n}\n50% {\r\n    transform: rotate(180deg);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n.ld.ld-cycle[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-cycle-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-cycle-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-fade-data-v-5e7ff57a {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes ld-fade-data-v-5e7ff57a {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\n}\n}\n.ld.ld-fade[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-fade-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-fade-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-flip-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n25% {\r\n    transform: rotateY(180deg) rotateX(0deg);\n}\n50% {\r\n    transform: rotateY(180deg) rotateX(180deg);\n}\n75% {\r\n    transform: rotateY(0deg) rotateX(180deg);\n}\n100% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n}\n@-webkit-keyframes ld-flip-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n25% {\r\n    transform: rotateY(180deg) rotateX(0deg);\n}\n50% {\r\n    transform: rotateY(180deg) rotateX(180deg);\n}\n75% {\r\n    transform: rotateY(0deg) rotateX(180deg);\n}\n100% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n}\n.ld.ld-flip[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-flip-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-flip-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-flip-v-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateX(0deg) rotateY(0deg);\n}\n50% {\r\n    transform: rotateX(180deg) rotateY(0deg);\n}\n100% {\r\n    transform: rotateX(0deg) rotateY(0deg);\n}\n}\n@-webkit-keyframes ld-flip-v-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateX(0deg) rotateY(0deg);\n}\n50% {\r\n    transform: rotateX(180deg) rotateY(0deg);\n}\n100% {\r\n    transform: rotateX(0deg) rotateY(0deg);\n}\n}\n.ld.ld-flip-v[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-flip-v-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-flip-v-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-flip-h-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n50% {\r\n    transform: rotateY(180deg) rotateX(0deg);\n}\n100% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n}\n@-webkit-keyframes ld-flip-h-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n50% {\r\n    transform: rotateY(180deg) rotateX(0deg);\n}\n100% {\r\n    transform: rotateY(0deg) rotateX(0deg);\n}\n}\n.ld.ld-flip-h[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-flip-h-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-flip-h-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-coin-v-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateX(0deg);\n}\n50% {\r\n    transform: rotateX(1800deg);\n}\n100% {\r\n    transform: rotateX(3600deg);\n}\n}\n@-webkit-keyframes ld-coin-v-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateX(0deg);\n}\n50% {\r\n    transform: rotateX(1800deg);\n}\n100% {\r\n    transform: rotateX(3600deg);\n}\n}\n.ld.ld-coin-v[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-coin-v-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-coin-v-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-coin-h-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg);\n}\n50% {\r\n    transform: rotateY(1800deg);\n}\n100% {\r\n    transform: rotateY(3600deg);\n}\n}\n@-webkit-keyframes ld-coin-h-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: rotateY(0deg);\n}\n50% {\r\n    transform: rotateY(1800deg);\n}\n100% {\r\n    transform: rotateY(3600deg);\n}\n}\n.ld.ld-coin-h[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-coin-h-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-coin-h-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-heartbeat-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1.05);\n}\n5% {\r\n    transform: scale(1.25);\n}\n39% {\r\n    transform: scale(0.9);\n}\n45% {\r\n    transform: scale(1.15);\n}\n60% {\r\n    transform: scale(1.05);\n}\n100% {\r\n    transform: scale(1);\n}\n}\n@-webkit-keyframes ld-heartbeat-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1.05);\n}\n5% {\r\n    transform: scale(1.25);\n}\n39% {\r\n    transform: scale(0.9);\n}\n45% {\r\n    transform: scale(1.15);\n}\n60% {\r\n    transform: scale(1.05);\n}\n100% {\r\n    transform: scale(1);\n}\n}\n.ld.ld-heartbeat[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-heartbeat-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\r\n  animation: ld-heartbeat-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n@keyframes ld-radio-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.13, 1);\r\n            animation-timing-function: cubic-bezier(0.3, 0.27, 0.13, 1);\n}\n0% {\r\n    transform: scale(0.8);\r\n    opacity: 0;\n}\n5% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: scale(1.5);\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes ld-radio-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.13, 1);\r\n            animation-timing-function: cubic-bezier(0.3, 0.27, 0.13, 1);\n}\n0% {\r\n    transform: scale(0.8);\r\n    opacity: 0;\n}\n5% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: scale(1.5);\r\n    opacity: 0;\n}\n}\n.ld.ld-radio[data-v-5e7ff57a] {\r\n  position: relative;\r\n  display: inline-block;\r\n  margin: 0;\r\n  padding: 0;\n}\n.ld.ld-radio[data-v-5e7ff57a]:after {\r\n  -webkit-animation: ld-radio-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-radio-data-v-5e7ff57a 1s infinite;\r\n  content: \" \";\r\n  display: block;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  border: 6px solid #000;\r\n  border-radius: 50%;\r\n  background: none;\n}\n.ld.ld-radio.square[data-v-5e7ff57a]:after {\r\n  border-radius: 0;\n}\n@keyframes ld-rotate-data-v-5e7ff57a {\n0%, 33%, 66%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n16%, 50%, 83% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(2) scaleY(0.5);\n}\n16% {\r\n    transform: skewX(45deg) skewY(0deg) scaleX(1) scaleY(1);\n}\n33% {\r\n    transform: skewX(0deg) skewY(45deg) scaleX(1) scaleY(1);\n}\n50% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(0.5) scaleY(2);\n}\n66% {\r\n    transform: skewX(0deg) skewY(-45deg) scaleX(1) scaleY(1);\n}\n83% {\r\n    transform: skewX(-45deg) skewY(0deg) scaleX(1) scaleY(1);\n}\n100% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(2) scaleY(0.5);\n}\n}\n@-webkit-keyframes ld-rotate-data-v-5e7ff57a {\n0%, 33%, 66%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n16%, 50%, 83% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(2) scaleY(0.5);\n}\n16% {\r\n    transform: skewX(45deg) skewY(0deg) scaleX(1) scaleY(1);\n}\n33% {\r\n    transform: skewX(0deg) skewY(45deg) scaleX(1) scaleY(1);\n}\n50% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(0.5) scaleY(2);\n}\n66% {\r\n    transform: skewX(0deg) skewY(-45deg) scaleX(1) scaleY(1);\n}\n83% {\r\n    transform: skewX(-45deg) skewY(0deg) scaleX(1) scaleY(1);\n}\n100% {\r\n    transform: skewX(0deg) skewY(0deg) scaleX(2) scaleY(0.5);\n}\n}\n.ld.ld-rotate[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rotate-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-rotate-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-rubber-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1, 1);\n}\n20% {\r\n    transform: scale(1.5, 1);\n}\n30% {\r\n    transform: scale(0.8, 1);\n}\n40% {\r\n    transform: scale(1.3, 1);\n}\n50% {\r\n    transform: scale(0.85, 1);\n}\n60% {\r\n    transform: scale(1.2, 1);\n}\n70% {\r\n    transform: scale(0.9, 1);\n}\n80% {\r\n    transform: scale(1.1, 1);\n}\n90% {\r\n    transform: scale(0.95, 1);\n}\n100% {\r\n    transform: scale(1, 1);\n}\n}\n@-webkit-keyframes ld-rubber-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1, 1);\n}\n20% {\r\n    transform: scale(1.5, 1);\n}\n30% {\r\n    transform: scale(0.8, 1);\n}\n40% {\r\n    transform: scale(1.3, 1);\n}\n50% {\r\n    transform: scale(0.85, 1);\n}\n60% {\r\n    transform: scale(1.2, 1);\n}\n70% {\r\n    transform: scale(0.9, 1);\n}\n80% {\r\n    transform: scale(1.1, 1);\n}\n90% {\r\n    transform: scale(0.95, 1);\n}\n100% {\r\n    transform: scale(1, 1);\n}\n}\n.ld.ld-rubber[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rubber-data-v-5e7ff57a 1s ease-out infinite;\r\n  animation: ld-rubber-data-v-5e7ff57a 1s ease-out infinite;\n}\n@keyframes ld-shadow-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\n}\n0% {\r\n    box-shadow: 0 0 0 0 rgba(0,0,0,0.2);\n}\n50% {\r\n    box-shadow: 0 0 0 10px rgba(0,0,0,0.9);\n}\n100% {\r\n    box-shadow: 0 0 0 0 rgba(0,0,0,0.2);\n}\n}\n@-webkit-keyframes ld-shadow-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);\n}\n0% {\r\n    box-shadow: 0 0 0 0 rgba(0,0,0,0.2);\n}\n50% {\r\n    box-shadow: 0 0 0 10px rgba(0,0,0,0.9);\n}\n100% {\r\n    box-shadow: 0 0 0 0 rgba(0,0,0,0.2);\n}\n}\n.ld.ld-shadow[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-shadow-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-shadow-data-v-5e7ff57a 1s infinite;\r\n  border-radius: 50%;\n}\n@keyframes ld-shadow-a-data-v-5e7ff57a {\n0% {\r\n    box-shadow: 3px 0px 0 6px rgba(0,0,0,0.5);\n}\n8.33% {\r\n    box-shadow: 3px 1px 0 6px rgba(0,0,0,0.5);\n}\n16.67% {\r\n    box-shadow: 2px 3px 0 6px rgba(0,0,0,0.5);\n}\n25% {\r\n    box-shadow: 0px 3px 0 6px rgba(0,0,0,0.5);\n}\n33.33% {\r\n    box-shadow: -1px 3px 0 6px rgba(0,0,0,0.5);\n}\n41.67% {\r\n    box-shadow: -3px 1px 0 6px rgba(0,0,0,0.5);\n}\n50% {\r\n    box-shadow: -3px 0px 0 6px rgba(0,0,0,0.5);\n}\n58.33% {\r\n    box-shadow: -3px -1px 0 6px rgba(0,0,0,0.5);\n}\n66.67% {\r\n    box-shadow: -2px -3px 0 6px rgba(0,0,0,0.5);\n}\n75% {\r\n    box-shadow: 0px -3px 0 6px rgba(0,0,0,0.5);\n}\n83.33% {\r\n    box-shadow: 2px -3px 0 6px rgba(0,0,0,0.5);\n}\n91.67% {\r\n    box-shadow: 3px -2px 0 6px rgba(0,0,0,0.5);\n}\n100% {\r\n    box-shadow: 3px 0px 0 6px rgba(0,0,0,0.5);\n}\n}\n@-webkit-keyframes ld-shadow-a-data-v-5e7ff57a {\n0% {\r\n    box-shadow: 3px 0px 0 6px rgba(0,0,0,0.5);\n}\n8.33% {\r\n    box-shadow: 3px 1px 0 6px rgba(0,0,0,0.5);\n}\n16.67% {\r\n    box-shadow: 2px 3px 0 6px rgba(0,0,0,0.5);\n}\n25% {\r\n    box-shadow: 0px 3px 0 6px rgba(0,0,0,0.5);\n}\n33.33% {\r\n    box-shadow: -1px 3px 0 6px rgba(0,0,0,0.5);\n}\n41.67% {\r\n    box-shadow: -3px 1px 0 6px rgba(0,0,0,0.5);\n}\n50% {\r\n    box-shadow: -3px 0px 0 6px rgba(0,0,0,0.5);\n}\n58.33% {\r\n    box-shadow: -3px -1px 0 6px rgba(0,0,0,0.5);\n}\n66.67% {\r\n    box-shadow: -2px -3px 0 6px rgba(0,0,0,0.5);\n}\n75% {\r\n    box-shadow: 0px -3px 0 6px rgba(0,0,0,0.5);\n}\n83.33% {\r\n    box-shadow: 2px -3px 0 6px rgba(0,0,0,0.5);\n}\n91.67% {\r\n    box-shadow: 3px -2px 0 6px rgba(0,0,0,0.5);\n}\n100% {\r\n    box-shadow: 3px 0px 0 6px rgba(0,0,0,0.5);\n}\n}\n.ld.ld-shadow-a[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-shadow-a-data-v-5e7ff57a 0.5s infinite;\r\n  animation: ld-shadow-a-data-v-5e7ff57a 0.5s infinite;\r\n  box-shadow: 3px 0px 0 6px rgba(0,0,0,0.5);\r\n  border-radius: 50%;\n}\n@keyframes ld-skew-data-v-5e7ff57a {\n0%, 50%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n25%, 75% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n0% {\r\n    transform: skewX(20deg) scale(1);\n}\n25% {\r\n    transform: skewX(0deg) scale(0.9);\n}\n50% {\r\n    transform: skewX(-20deg) scale(1);\n}\n75% {\r\n    transform: skewX(0deg) scale(0.9);\n}\n100% {\r\n    transform: skewX(20deg) scale(1);\n}\n}\n@-webkit-keyframes ld-skew-data-v-5e7ff57a {\n0%, 50%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n25%, 75% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n0% {\r\n    transform: skewX(20deg) scale(1);\n}\n25% {\r\n    transform: skewX(0deg) scale(0.9);\n}\n50% {\r\n    transform: skewX(-20deg) scale(1);\n}\n75% {\r\n    transform: skewX(0deg) scale(0.9);\n}\n100% {\r\n    transform: skewX(20deg) scale(1);\n}\n}\n.ld.ld-skew[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-skew-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-skew-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-spin-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\r\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\r\n    transform: rotate(180deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n@-webkit-keyframes ld-spin-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\r\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\r\n    transform: rotate(180deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\r\n    transform: rotate(360deg);\n}\n}\n.ld.ld-spin[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-spin-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-spin-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-spin-fast-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\r\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\r\n    transform: rotate(900deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\r\n    transform: rotate(1800deg);\n}\n}\n@-webkit-keyframes ld-spin-fast-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\r\n    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\r\n            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n50% {\r\n    transform: rotate(900deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\r\n            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n100% {\r\n    transform: rotate(1800deg);\n}\n}\n.ld.ld-spin-fast[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-spin-fast-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-spin-fast-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-squeeze-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1, 0.5);\n}\n50% {\r\n    transform: scale(0.5, 1);\n}\n100% {\r\n    transform: scale(1, 0.5);\n}\n}\n@-webkit-keyframes ld-squeeze-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1, 0.5);\n}\n50% {\r\n    transform: scale(0.5, 1);\n}\n100% {\r\n    transform: scale(1, 0.5);\n}\n}\n.ld.ld-squeeze[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-squeeze-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\r\n  animation: ld-squeeze-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n@keyframes ld-surprise-data-v-5e7ff57a {\n0% {\r\n    transform: skewX(0deg) scale(1);\n}\n10% {\r\n    transform: skewX(-15deg) scale(0.8);\n}\n20% {\r\n    transform: skewX(-15deg) scale(0.8);\n}\n30% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n40% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n50% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n60% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n70% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n80% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n90% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n100% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n}\n@-webkit-keyframes ld-surprise-data-v-5e7ff57a {\n0% {\r\n    transform: skewX(0deg) scale(1);\n}\n10% {\r\n    transform: skewX(-15deg) scale(0.8);\n}\n20% {\r\n    transform: skewX(-15deg) scale(0.8);\n}\n30% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n40% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n50% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n60% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n70% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n80% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n90% {\r\n    transform: skewX(15deg) scale(1.3);\n}\n100% {\r\n    transform: skewX(-15deg) scale(1.3);\n}\n}\n.ld.ld-surprise[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-surprise-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-surprise-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-tick-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\n}\n20% {\r\n    transform: rotate(-30deg);\n}\n30% {\r\n    transform: rotate(30deg);\n}\n40% {\r\n    transform: rotate(-21deg);\n}\n50% {\r\n    transform: rotate(15deg);\n}\n60% {\r\n    transform: rotate(-10deg);\n}\n70% {\r\n    transform: rotate(6deg);\n}\n80% {\r\n    transform: rotate(-2deg);\n}\n90% {\r\n    transform: rotate(1deg);\n}\n100% {\r\n    transform: rotate(0deg);\n}\n}\n@-webkit-keyframes ld-tick-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0);\n}\n20% {\r\n    transform: rotate(-30deg);\n}\n30% {\r\n    transform: rotate(30deg);\n}\n40% {\r\n    transform: rotate(-21deg);\n}\n50% {\r\n    transform: rotate(15deg);\n}\n60% {\r\n    transform: rotate(-10deg);\n}\n70% {\r\n    transform: rotate(6deg);\n}\n80% {\r\n    transform: rotate(-2deg);\n}\n90% {\r\n    transform: rotate(1deg);\n}\n100% {\r\n    transform: rotate(0deg);\n}\n}\n.ld.ld-tick[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-tick-data-v-5e7ff57a 1s ease-out infinite;\r\n  animation: ld-tick-data-v-5e7ff57a 1s ease-out infinite;\n}\n@keyframes ld-vortex-in-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(1800deg) scale(3);\r\n    opacity: 0;\n}\n60% {\r\n    transform: rotate(0deg) scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes ld-vortex-in-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(1800deg) scale(3);\r\n    opacity: 0;\n}\n60% {\r\n    transform: rotate(0deg) scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\n}\n}\n.ld.ld-vortex-in[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-vortex-in-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-vortex-in-data-v-5e7ff57a 2s infinite;\r\n  -webkit-animation-timing-function: cubic-bezier(0.3, 0, 1, 0.7);\r\n          animation-timing-function: cubic-bezier(0.3, 0, 1, 0.7);\n}\n@keyframes ld-vortex-out-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0deg) scale(0);\r\n    opacity: 1;\n}\n60% {\r\n    transform: rotate(1800deg) scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: rotate(1800deg) scale(1);\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes ld-vortex-out-data-v-5e7ff57a {\n0% {\r\n    transform: rotate(0deg) scale(0);\r\n    opacity: 1;\n}\n60% {\r\n    transform: rotate(1800deg) scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: rotate(1800deg) scale(1);\r\n    opacity: 0;\n}\n}\n.ld.ld-vortex-out[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-vortex-out-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-vortex-out-data-v-5e7ff57a 2s infinite;\r\n  -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n          animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n@keyframes ld-wrench-data-v-5e7ff57a {\n20%, 36%, 70%, 86% {\r\n    transform: rotate(0deg);\n}\n0%, 50%, 100% {\r\n    transform: rotate(45deg);\n}\n}\n@-webkit-keyframes ld-wrench-data-v-5e7ff57a {\n20%, 36%, 70%, 86% {\r\n    transform: rotate(0deg);\n}\n0%, 50%, 100% {\r\n    transform: rotate(45deg);\n}\n}\n.ld.ld-wrench[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-wrench-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-wrench-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-pulse-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1.1);\n}\n50% {\r\n    transform: scale(0.9);\n}\n51% {\r\n    transform: scale(1.1);\n}\n100% {\r\n    transform: scale(0.9);\n}\n}\n@-webkit-keyframes ld-pulse-data-v-5e7ff57a {\n0% {\r\n    transform: scale(1.1);\n}\n50% {\r\n    transform: scale(0.9);\n}\n51% {\r\n    transform: scale(1.1);\n}\n100% {\r\n    transform: scale(0.9);\n}\n}\n.ld.ld-pulse[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-pulse-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\r\n  animation: ld-pulse-data-v-5e7ff57a 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n@keyframes ld-bounce-data-v-5e7ff57a {\n0%, 90% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n10% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0%, 30%) scaleY(0.5);\n}\n10% {\r\n    transform: translate(0%, 5%) scaleY(1.1);\n}\n50% {\r\n    transform: translate(0%, -37%) scaleY(1.1);\n}\n90% {\r\n    transform: translate(0%, 5%) scaleY(1.1);\n}\n100% {\r\n    transform: translate(0%, 30%) scaleY(0.5);\n}\n}\n@-webkit-keyframes ld-bounce-data-v-5e7ff57a {\n0%, 90% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n10% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0%, 30%) scaleY(0.5);\n}\n10% {\r\n    transform: translate(0%, 5%) scaleY(1.1);\n}\n50% {\r\n    transform: translate(0%, -37%) scaleY(1.1);\n}\n90% {\r\n    transform: translate(0%, 5%) scaleY(1.1);\n}\n100% {\r\n    transform: translate(0%, 30%) scaleY(0.5);\n}\n}\n.ld.ld-bounce[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-bounce-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-bounce-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(160%, -40%);\n}\n12.5% {\r\n    transform: translate(120%, -23%);\n}\n25% {\r\n    transform: translate(80%, 0%);\n}\n37.5% {\r\n    transform: translate(50%, -23%);\n}\n50% {\r\n    transform: translate(0%, -40%);\n}\n62.5% {\r\n    transform: translate(-50%, -23%);\n}\n75% {\r\n    transform: translate(-80%, 0%);\n}\n87.5% {\r\n    transform: translate(-120%, -23%);\n}\n100% {\r\n    transform: translate(-160%, -40%);\n}\n}\n@-webkit-keyframes ld-bounce-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(160%, -40%);\n}\n12.5% {\r\n    transform: translate(120%, -23%);\n}\n25% {\r\n    transform: translate(80%, 0%);\n}\n37.5% {\r\n    transform: translate(50%, -23%);\n}\n50% {\r\n    transform: translate(0%, -40%);\n}\n62.5% {\r\n    transform: translate(-50%, -23%);\n}\n75% {\r\n    transform: translate(-80%, 0%);\n}\n87.5% {\r\n    transform: translate(-120%, -23%);\n}\n100% {\r\n    transform: translate(-160%, -40%);\n}\n}\n.ld.ld-bounce-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-rtl-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-bounce-rtl-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-bounce-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-160%, -40%);\n}\n12.5% {\r\n    transform: translate(-120%, -23%);\n}\n25% {\r\n    transform: translate(-100%, 0%);\n}\n37.5% {\r\n    transform: translate(-50%, -23%);\n}\n50% {\r\n    transform: translate(0%, -40%);\n}\n62.5% {\r\n    transform: translate(50%, -23%);\n}\n75% {\r\n    transform: translate(100%, 0%);\n}\n87.5% {\r\n    transform: translate(120%, -23%);\n}\n100% {\r\n    transform: translate(160%, -40%);\n}\n}\n@-webkit-keyframes ld-bounce-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-160%, -40%);\n}\n12.5% {\r\n    transform: translate(-120%, -23%);\n}\n25% {\r\n    transform: translate(-100%, 0%);\n}\n37.5% {\r\n    transform: translate(-50%, -23%);\n}\n50% {\r\n    transform: translate(0%, -40%);\n}\n62.5% {\r\n    transform: translate(50%, -23%);\n}\n75% {\r\n    transform: translate(100%, 0%);\n}\n87.5% {\r\n    transform: translate(120%, -23%);\n}\n100% {\r\n    transform: translate(160%, -40%);\n}\n}\n.ld.ld-bounce-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-ltr-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-bounce-ltr-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-bounce-a-px-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n12.5%, 37.5%, 62.5%, 87.5% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0%, 0%);\n}\n12.5% {\r\n    transform: translate(5%, -28%);\n}\n25% {\r\n    transform: translate(10%, 0%);\n}\n37.5% {\r\n    transform: translate(5%, -28%);\n}\n50% {\r\n    transform: translate(0%, 0%);\n}\n62.5% {\r\n    transform: translate(-5%, -28%);\n}\n75% {\r\n    transform: translate(-10%, 0%);\n}\n87.5% {\r\n    transform: translate(-5%, -28%);\n}\n100% {\r\n    transform: translate(0%, 0%);\n}\n}\n@-webkit-keyframes ld-bounce-a-px-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n12.5%, 37.5%, 62.5%, 87.5% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0%, 0%);\n}\n12.5% {\r\n    transform: translate(5%, -28%);\n}\n25% {\r\n    transform: translate(10%, 0%);\n}\n37.5% {\r\n    transform: translate(5%, -28%);\n}\n50% {\r\n    transform: translate(0%, 0%);\n}\n62.5% {\r\n    transform: translate(-5%, -28%);\n}\n75% {\r\n    transform: translate(-10%, 0%);\n}\n87.5% {\r\n    transform: translate(-5%, -28%);\n}\n100% {\r\n    transform: translate(0%, 0%);\n}\n}\n.ld.ld-bounce-a-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-a-px-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-bounce-a-px-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-float-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n0% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n30% {\r\n    transform: translate(0, -10%);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n50% {\r\n    transform: translate(0, -10%);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n100% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n}\n@-webkit-keyframes ld-float-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n0% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n30% {\r\n    transform: translate(0, -10%);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n50% {\r\n    transform: translate(0, -10%);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n100% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n}\n.ld.ld-float[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-float-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-float-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-hit-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n    transform: scale(0) translate(0, 0) skewX(0);\n}\n20% {\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n100% {\r\n    transform: scale(1) translate(0, 200%) skewX(20deg);\n}\n}\n@-webkit-keyframes ld-hit-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n    transform: scale(0) translate(0, 0) skewX(0);\n}\n20% {\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n100% {\r\n    transform: scale(1) translate(0, 200%) skewX(20deg);\n}\n}\n.ld.ld-hit[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-hit-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-hit-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-jelly-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n16.6% {\r\n    transform: translate(-30%, 0) skewX(30deg);\n}\n33.3% {\r\n    transform: translate(25%, 0) skewX(-20deg);\n}\n50% {\r\n    transform: translate(-12%, 0) skewX(10deg);\n}\n66.6% {\r\n    transform: translate(6%, 0) skewX(-5deg);\n}\n83.3% {\r\n    transform: translate(-2.5%, 0) skewX(2deg);\n}\n100% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n}\n@-webkit-keyframes ld-jelly-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n16.6% {\r\n    transform: translate(-30%, 0) skewX(30deg);\n}\n33.3% {\r\n    transform: translate(25%, 0) skewX(-20deg);\n}\n50% {\r\n    transform: translate(-12%, 0) skewX(10deg);\n}\n66.6% {\r\n    transform: translate(6%, 0) skewX(-5deg);\n}\n83.3% {\r\n    transform: translate(-2.5%, 0) skewX(2deg);\n}\n100% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n}\n.ld.ld-jelly[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jelly-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-jelly-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-jump-data-v-5e7ff57a {\n0%, 28%, 48%, 64%, 76%, 86%, 93%, 100% {\r\n    -webkit-animation-timing-function: ease-out;\r\n            animation-timing-function: ease-out;\n}\n14%, 38%, 56%, 70%, 81%, 90%, 97% {\r\n    -webkit-animation-timing-function: ease-in;\r\n            animation-timing-function: ease-in;\n}\n0% {\r\n    transform: translateY(0%);\n}\n14% {\r\n    transform: translateY(-27%);\n}\n28% {\r\n    transform: translateY(0%);\n}\n38% {\r\n    transform: translateY(-20%);\n}\n48% {\r\n    transform: translateY(0%);\n}\n56% {\r\n    transform: translateY(-16%);\n}\n64% {\r\n    transform: translateY(0%);\n}\n70% {\r\n    transform: translateY(-12%);\n}\n76% {\r\n    transform: translateY(0%);\n}\n81% {\r\n    transform: translateY(-7.5%);\n}\n86% {\r\n    transform: translateY(0%);\n}\n90% {\r\n    transform: translateY(-3%);\n}\n93% {\r\n    transform: translateY(0%);\n}\n97% {\r\n    transform: translateY(-1.5%);\n}\n100% {\r\n    transform: translateY(0%);\n}\n}\n@-webkit-keyframes ld-jump-data-v-5e7ff57a {\n0%, 28%, 48%, 64%, 76%, 86%, 93%, 100% {\r\n    -webkit-animation-timing-function: ease-out;\r\n            animation-timing-function: ease-out;\n}\n14%, 38%, 56%, 70%, 81%, 90%, 97% {\r\n    -webkit-animation-timing-function: ease-in;\r\n            animation-timing-function: ease-in;\n}\n0% {\r\n    transform: translateY(0%);\n}\n14% {\r\n    transform: translateY(-27%);\n}\n28% {\r\n    transform: translateY(0%);\n}\n38% {\r\n    transform: translateY(-20%);\n}\n48% {\r\n    transform: translateY(0%);\n}\n56% {\r\n    transform: translateY(-16%);\n}\n64% {\r\n    transform: translateY(0%);\n}\n70% {\r\n    transform: translateY(-12%);\n}\n76% {\r\n    transform: translateY(0%);\n}\n81% {\r\n    transform: translateY(-7.5%);\n}\n86% {\r\n    transform: translateY(0%);\n}\n90% {\r\n    transform: translateY(-3%);\n}\n93% {\r\n    transform: translateY(0%);\n}\n97% {\r\n    transform: translateY(-1.5%);\n}\n100% {\r\n    transform: translateY(0%);\n}\n}\n.ld.ld-jump[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jump-data-v-5e7ff57a 1.5s ease-in infinite;\r\n  animation: ld-jump-data-v-5e7ff57a 1.5s ease-in infinite;\n}\n@keyframes ld-orbit-data-v-5e7ff57a {\n0% {\r\n    transform: translate(30%, 0%) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(21%, 21%) rotate(45deg);\n}\n25% {\r\n    transform: translate(0%, 30%) rotate(90deg);\n}\n37.5% {\r\n    transform: translate(-21%, 21%) rotate(135deg);\n}\n50% {\r\n    transform: translate(-30%, 0%) rotate(180deg);\n}\n62.5% {\r\n    transform: translate(-21%, -21%) rotate(225deg);\n}\n75% {\r\n    transform: translate(0%, -30%) rotate(270deg);\n}\n87.5% {\r\n    transform: translate(21%, -21%) rotate(315deg);\n}\n100% {\r\n    transform: translate(30%, 0%) rotate(360deg);\n}\n}\n@-webkit-keyframes ld-orbit-data-v-5e7ff57a {\n0% {\r\n    transform: translate(30%, 0%) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(21%, 21%) rotate(45deg);\n}\n25% {\r\n    transform: translate(0%, 30%) rotate(90deg);\n}\n37.5% {\r\n    transform: translate(-21%, 21%) rotate(135deg);\n}\n50% {\r\n    transform: translate(-30%, 0%) rotate(180deg);\n}\n62.5% {\r\n    transform: translate(-21%, -21%) rotate(225deg);\n}\n75% {\r\n    transform: translate(0%, -30%) rotate(270deg);\n}\n87.5% {\r\n    transform: translate(21%, -21%) rotate(315deg);\n}\n100% {\r\n    transform: translate(30%, 0%) rotate(360deg);\n}\n}\n.ld.ld-orbit[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-orbit-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-orbit-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-rush-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(200%, 0) skewX(-45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(-40%, 0) skewX(35deg);\n}\n45% {\r\n    transform: translate(20%, 0) skewX(-15deg);\n}\n60% {\r\n    transform: translate(-10%, 0) skewX(7deg);\n}\n80% {\r\n    transform: translate(0%, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(-250%, 0) skewX(-45deg);\n}\n}\n@-webkit-keyframes ld-rush-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(200%, 0) skewX(-45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(-40%, 0) skewX(35deg);\n}\n45% {\r\n    transform: translate(20%, 0) skewX(-15deg);\n}\n60% {\r\n    transform: translate(-10%, 0) skewX(7deg);\n}\n80% {\r\n    transform: translate(0%, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(-250%, 0) skewX(-45deg);\n}\n}\n.ld.ld-rush-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rush-rtl-data-v-5e7ff57a 1.5s infinite linear;\r\n  animation: ld-rush-rtl-data-v-5e7ff57a 1.5s infinite linear;\n}\n@keyframes ld-rush-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-200%, 0) skewX(45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(40%, 0) skewX(-35deg);\n}\n45% {\r\n    transform: translate(-20%, 0) skewX(15deg);\n}\n60% {\r\n    transform: translate(10%, 0) skewX(-7deg);\n}\n80% {\r\n    transform: translate(0%, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(250%, 0) skewX(45deg);\n}\n}\n@-webkit-keyframes ld-rush-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-200%, 0) skewX(45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(40%, 0) skewX(-35deg);\n}\n45% {\r\n    transform: translate(-20%, 0) skewX(15deg);\n}\n60% {\r\n    transform: translate(10%, 0) skewX(-7deg);\n}\n80% {\r\n    transform: translate(0%, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(250%, 0) skewX(45deg);\n}\n}\n.ld.ld-rush-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rush-ltr-data-v-5e7ff57a 1.5s infinite linear;\r\n  animation: ld-rush-ltr-data-v-5e7ff57a 1.5s infinite linear;\n}\n@keyframes ld-shake-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n16.6% {\r\n    transform: translate(-35%, 0);\n}\n33.3% {\r\n    transform: translate(25%, 0);\n}\n50% {\r\n    transform: translate(-12%, 0);\n}\n66.6% {\r\n    transform: translate(6%, 0);\n}\n83.3% {\r\n    transform: translate(-2.5%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-shake-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n16.6% {\r\n    transform: translate(-35%, 0);\n}\n33.3% {\r\n    transform: translate(25%, 0);\n}\n50% {\r\n    transform: translate(-12%, 0);\n}\n66.6% {\r\n    transform: translate(6%, 0);\n}\n83.3% {\r\n    transform: translate(-2.5%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-shake[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-shake-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-shake-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-slide-ltr-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(200%, 0);\n}\n50% {\r\n    transform: translate(-200%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-ltr-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(200%, 0);\n}\n50% {\r\n    transform: translate(-200%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-ltr-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-ltr-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-rtl-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(-200%, 0);\n}\n50% {\r\n    transform: translate(200%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-rtl-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(-200%, 0);\n}\n50% {\r\n    transform: translate(200%, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-rtl-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-rtl-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-btt-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, -200%);\n}\n50% {\r\n    transform: translate(0, 200%);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-btt-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, -200%);\n}\n50% {\r\n    transform: translate(0, 200%);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-btt[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-btt-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-btt-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-ttb-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, 200%);\n}\n50% {\r\n    transform: translate(0, -200%);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-ttb-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, 200%);\n}\n50% {\r\n    transform: translate(0, -200%);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-ttb[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-ttb-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-ttb-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-tremble-data-v-5e7ff57a {\n0% {\r\n    transform: translate(1%, 1%);\n}\n5% {\r\n    transform: translate(0%, 1%);\n}\n10% {\r\n    transform: translate(1%, 2%);\n}\n15% {\r\n    transform: translate(2%, 1%);\n}\n20% {\r\n    transform: translate(3%, 0%);\n}\n25% {\r\n    transform: translate(1%, 2%);\n}\n30% {\r\n    transform: translate(1%, 3%);\n}\n35% {\r\n    transform: translate(0%, 1%);\n}\n40% {\r\n    transform: translate(1%, 1%);\n}\n45% {\r\n    transform: translate(1%, 0%);\n}\n50% {\r\n    transform: translate(2%, 1%);\n}\n55% {\r\n    transform: translate(1%, 2%);\n}\n60% {\r\n    transform: translate(3%, 1%);\n}\n65% {\r\n    transform: translate(0%, 2%);\n}\n70% {\r\n    transform: translate(3%, 0%);\n}\n75% {\r\n    transform: translate(0%, 0%);\n}\n80% {\r\n    transform: translate(2%, 3%);\n}\n85% {\r\n    transform: translate(1%, 0%);\n}\n90% {\r\n    transform: translate(0%, 2%);\n}\n95% {\r\n    transform: translate(3%, 2%);\n}\n}\n@-webkit-keyframes ld-tremble-data-v-5e7ff57a {\n0% {\r\n    transform: translate(1%, 1%);\n}\n5% {\r\n    transform: translate(0%, 1%);\n}\n10% {\r\n    transform: translate(1%, 2%);\n}\n15% {\r\n    transform: translate(2%, 1%);\n}\n20% {\r\n    transform: translate(3%, 0%);\n}\n25% {\r\n    transform: translate(1%, 2%);\n}\n30% {\r\n    transform: translate(1%, 3%);\n}\n35% {\r\n    transform: translate(0%, 1%);\n}\n40% {\r\n    transform: translate(1%, 1%);\n}\n45% {\r\n    transform: translate(1%, 0%);\n}\n50% {\r\n    transform: translate(2%, 1%);\n}\n55% {\r\n    transform: translate(1%, 2%);\n}\n60% {\r\n    transform: translate(3%, 1%);\n}\n65% {\r\n    transform: translate(0%, 2%);\n}\n70% {\r\n    transform: translate(3%, 0%);\n}\n75% {\r\n    transform: translate(0%, 0%);\n}\n80% {\r\n    transform: translate(2%, 3%);\n}\n85% {\r\n    transform: translate(1%, 0%);\n}\n90% {\r\n    transform: translate(0%, 2%);\n}\n95% {\r\n    transform: translate(3%, 2%);\n}\n}\n.ld.ld-tremble[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-tremble-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-tremble-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-wander-h-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-35%, 0);\n}\n50% {\r\n    transform: translate(35%, 0);\n}\n100% {\r\n    transform: translate(-35%, 0);\n}\n}\n@-webkit-keyframes ld-wander-h-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-35%, 0);\n}\n50% {\r\n    transform: translate(35%, 0);\n}\n100% {\r\n    transform: translate(-35%, 0);\n}\n}\n.ld.ld-wander-h[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-wander-h-data-v-5e7ff57a 1s infinite ease-out;\r\n  animation: ld-wander-h-data-v-5e7ff57a 1s infinite ease-out;\n}\n@keyframes ld-wander-v-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -35%);\n}\n50% {\r\n    transform: translate(0, 35%);\n}\n100% {\r\n    transform: translate(0, -35%);\n}\n}\n@-webkit-keyframes ld-wander-v-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -35%);\n}\n50% {\r\n    transform: translate(0, 35%);\n}\n100% {\r\n    transform: translate(0, -35%);\n}\n}\n.ld.ld-wander-v[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-wander-v-data-v-5e7ff57a 1s infinite ease-out;\r\n  animation: ld-wander-v-data-v-5e7ff57a 1s infinite ease-out;\n}\n@keyframes ld-jingle-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -40%) rotate(0deg) translate(0, 40%);\n}\n4% {\r\n    transform: translate(0, -40%) rotate(11deg) translate(0, 40%);\n}\n10% {\r\n    transform: translate(0, -40%) rotate(15deg) translate(0, 40%);\n}\n18% {\r\n    transform: translate(0, -40%) rotate(-11deg) translate(0, 40%);\n}\n20% {\r\n    transform: translate(0, -40%) rotate(-13deg) translate(0, 40%);\n}\n21% {\r\n    transform: translate(0, -40%) rotate(-12deg) translate(0, 40%);\n}\n22% {\r\n    transform: translate(0, -40%) rotate(-10deg) translate(0, 40%);\n}\n24% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n26% {\r\n    transform: translate(0, -40%) rotate(3deg) translate(0, 40%);\n}\n28% {\r\n    transform: translate(0, -40%) rotate(9deg) translate(0, 40%);\n}\n30% {\r\n    transform: translate(0, -40%) rotate(10deg) translate(0, 40%);\n}\n31% {\r\n    transform: translate(0, -40%) rotate(9deg) translate(0, 40%);\n}\n33% {\r\n    transform: translate(0, -40%) rotate(5deg) translate(0, 40%);\n}\n34% {\r\n    transform: translate(0, -40%) rotate(1deg) translate(0, 40%);\n}\n36% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n39% {\r\n    transform: translate(0, -40%) rotate(-8deg) translate(0, 40%);\n}\n40% {\r\n    transform: translate(0, -40%) rotate(-7deg) translate(0, 40%);\n}\n44% {\r\n    transform: translate(0, -40%) rotate(3deg) translate(0, 40%);\n}\n47% {\r\n    transform: translate(0, -40%) rotate(7deg) translate(0, 40%);\n}\n56% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n63% {\r\n    transform: translate(0, -40%) rotate(1deg) translate(0, 40%);\n}\n75% {\r\n    transform: translate(0, -40%) rotate(-1deg) translate(0, 40%);\n}\n100% {\r\n    transform: translate(0, -40%) rotate(0deg) translate(0, 40%);\n}\n}\n@-webkit-keyframes ld-jingle-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -40%) rotate(0deg) translate(0, 40%);\n}\n4% {\r\n    transform: translate(0, -40%) rotate(11deg) translate(0, 40%);\n}\n10% {\r\n    transform: translate(0, -40%) rotate(15deg) translate(0, 40%);\n}\n18% {\r\n    transform: translate(0, -40%) rotate(-11deg) translate(0, 40%);\n}\n20% {\r\n    transform: translate(0, -40%) rotate(-13deg) translate(0, 40%);\n}\n21% {\r\n    transform: translate(0, -40%) rotate(-12deg) translate(0, 40%);\n}\n22% {\r\n    transform: translate(0, -40%) rotate(-10deg) translate(0, 40%);\n}\n24% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n26% {\r\n    transform: translate(0, -40%) rotate(3deg) translate(0, 40%);\n}\n28% {\r\n    transform: translate(0, -40%) rotate(9deg) translate(0, 40%);\n}\n30% {\r\n    transform: translate(0, -40%) rotate(10deg) translate(0, 40%);\n}\n31% {\r\n    transform: translate(0, -40%) rotate(9deg) translate(0, 40%);\n}\n33% {\r\n    transform: translate(0, -40%) rotate(5deg) translate(0, 40%);\n}\n34% {\r\n    transform: translate(0, -40%) rotate(1deg) translate(0, 40%);\n}\n36% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n39% {\r\n    transform: translate(0, -40%) rotate(-8deg) translate(0, 40%);\n}\n40% {\r\n    transform: translate(0, -40%) rotate(-7deg) translate(0, 40%);\n}\n44% {\r\n    transform: translate(0, -40%) rotate(3deg) translate(0, 40%);\n}\n47% {\r\n    transform: translate(0, -40%) rotate(7deg) translate(0, 40%);\n}\n56% {\r\n    transform: translate(0, -40%) rotate(-5deg) translate(0, 40%);\n}\n63% {\r\n    transform: translate(0, -40%) rotate(1deg) translate(0, 40%);\n}\n75% {\r\n    transform: translate(0, -40%) rotate(-1deg) translate(0, 40%);\n}\n100% {\r\n    transform: translate(0, -40%) rotate(0deg) translate(0, 40%);\n}\n}\n.ld.ld-jingle[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jingle-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-jingle-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-swim-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(5%, -10%) rotate(3deg);\n}\n25% {\r\n    transform: translate(0, -15%) rotate(6deg);\n}\n37.5% {\r\n    transform: translate(-5%, -10%) rotate(3deg);\n}\n50% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n62.5% {\r\n    transform: translate(5%, 10%) rotate(-3deg);\n}\n75% {\r\n    transform: translate(0, 15%) rotate(-6deg);\n}\n87.5% {\r\n    transform: translate(-5%, 10%) rotate(-3deg);\n}\n100% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n}\n@-webkit-keyframes ld-swim-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(5%, -10%) rotate(3deg);\n}\n25% {\r\n    transform: translate(0, -15%) rotate(6deg);\n}\n37.5% {\r\n    transform: translate(-5%, -10%) rotate(3deg);\n}\n50% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n62.5% {\r\n    transform: translate(5%, 10%) rotate(-3deg);\n}\n75% {\r\n    transform: translate(0, 15%) rotate(-6deg);\n}\n87.5% {\r\n    transform: translate(-5%, 10%) rotate(-3deg);\n}\n100% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n}\n.ld.ld-swim[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-swim-data-v-5e7ff57a 3s infinite linear;\r\n  animation: ld-swim-data-v-5e7ff57a 3s infinite linear;\n}\n@keyframes ld-leaf-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-14.7%, -117%) rotate(-0.3deg);\n}\n1% {\r\n    transform: translate(-14.399999999999999%, -112.5%) rotate(-0.6deg);\n}\n2% {\r\n    transform: translate(-13.8%, -102.00000000000001%) rotate(-1.2deg);\n}\n3% {\r\n    transform: translate(-13.5%, -100.5%) rotate(-1.5deg);\n}\n5% {\r\n    transform: translate(-7.199999999999999%, -87%) rotate(-7.800000000000001deg);\n}\n7% {\r\n    transform: translate(5.399999999999999%, -79.5%) rotate(-20.400000000000002deg);\n}\n10% {\r\n    transform: translate(12.9%, -76.5%) rotate(-27.900000000000002deg);\n}\n12% {\r\n    transform: translate(14.399999999999999%, -75%) rotate(-29.4deg);\n}\n13% {\r\n    transform: translate(14.7%, -75%) rotate(-29.7deg);\n}\n14% {\r\n    transform: translate(15%, -75%) rotate(-30deg);\n}\n15% {\r\n    transform: translate(14.399999999999999%, -69%) rotate(0.6deg);\n}\n16% {\r\n    transform: translate(13.8%, -58.5%) rotate(1.2deg);\n}\n19% {\r\n    transform: translate(7.199999999999999%, -45%) rotate(7.800000000000001deg);\n}\n21% {\r\n    transform: translate(-5.399999999999999%, -37.5%) rotate(20.400000000000002deg);\n}\n24% {\r\n    transform: translate(-12.9%, -33%) rotate(27.900000000000002deg);\n}\n26% {\r\n    transform: translate(-14.399999999999999%, -33%) rotate(29.4deg);\n}\n27% {\r\n    transform: translate(-14.7%, -31.5%) rotate(29.7deg);\n}\n28% {\r\n    transform: translate(-15%, -31.5%) rotate(30deg);\n}\n29% {\r\n    transform: translate(-14.399999999999999%, -27%) rotate(-0.6deg);\n}\n30% {\r\n    transform: translate(-13.8%, -16.5%) rotate(-1.2deg);\n}\n31% {\r\n    transform: translate(-13.5%, -15%) rotate(-1.5deg);\n}\n33% {\r\n    transform: translate(-7.199999999999999%, -1.5%) rotate(-7.800000000000001deg);\n}\n36% {\r\n    transform: translate(5.399999999999999%, 4.5%) rotate(-20.400000000000002deg);\n}\n38% {\r\n    transform: translate(12.9%, 9%) rotate(-27.900000000000002deg);\n}\n40% {\r\n    transform: translate(14.399999999999999%, 10.500000000000002%) rotate(-29.4deg);\n}\n41% {\r\n    transform: translate(14.7%, 10.500000000000002%) rotate(-29.7deg);\n}\n42% {\r\n    transform: translate(15%, 10.500000000000002%) rotate(-30deg);\n}\n43% {\r\n    transform: translate(15%, 10.500000000000002%) rotate(-30deg);\n}\n43% {\r\n    transform: translate(14.7%, 10.500000000000002%) rotate(0.3deg);\n}\n43% {\r\n    transform: translate(14.399999999999999%, 16.5%) rotate(0.6deg);\n}\n45% {\r\n    transform: translate(13.8%, 25.500000000000004%) rotate(1.2deg);\n}\n45% {\r\n    transform: translate(13.5%, 27%) rotate(1.5deg);\n}\n48% {\r\n    transform: translate(7.199999999999999%, 40.5%) rotate(7.800000000000001deg);\n}\n50% {\r\n    transform: translate(-5.399999999999999%, 48%) rotate(20.400000000000002deg);\n}\n52% {\r\n    transform: translate(-12.9%, 51.00000000000001%) rotate(27.900000000000002deg);\n}\n54% {\r\n    transform: translate(-14.399999999999999%, 52.5%) rotate(29.4deg);\n}\n56% {\r\n    transform: translate(-14.7%, 54%) rotate(29.7deg);\n}\n57% {\r\n    transform: translate(-14.7%, 54%) rotate(-0.3deg);\n}\n58% {\r\n    transform: translate(-14.399999999999999%, 58.5%) rotate(-0.6deg);\n}\n59% {\r\n    transform: translate(-13.5%, 70.5%) rotate(-1.5deg);\n}\n62% {\r\n    transform: translate(-7.199999999999999%, 84.00000000000001%) rotate(-7.800000000000001deg);\n}\n64% {\r\n    transform: translate(5.399999999999999%, 91.5%) rotate(-20.400000000000002deg);\n}\n67% {\r\n    transform: translate(12.9%, 94.5%) rotate(-27.900000000000002deg);\n}\n69% {\r\n    transform: translate(14.399999999999999%, 96%) rotate(-29.4deg);\n}\n70% {\r\n    transform: translate(14.7%, 96%) rotate(-29.7deg);\n}\n71% {\r\n    transform: translate(15%, 96%) rotate(-30deg);\n}\n72% {\r\n    transform: translate(14.399999999999999%, 102.00000000000001%) rotate(0.6deg);\n}\n73% {\r\n    transform: translate(13.8%, 111%) rotate(1.2deg);\n}\n74% {\r\n    transform: translate(13.5%, 112.5%) rotate(1.5deg);\n}\n76% {\r\n    transform: translate(7.199999999999999%, 126%) rotate(7.800000000000001deg);\n}\n79% {\r\n    transform: translate(-5.399999999999999%, 133.5%) rotate(20.400000000000002deg);\n}\n81% {\r\n    transform: translate(-12.9%, 138%) rotate(27.900000000000002deg);\n}\n83% {\r\n    transform: translate(-14.399999999999999%, 139.5%) rotate(29.4deg);\n}\n84% {\r\n    transform: translate(-14.7%, 139.5%) rotate(29.7deg);\n}\n85% {\r\n    transform: translate(-15%, 139.5%) rotate(30deg);\n}\n86% {\r\n    transform: translate(-14.7%, 139.5%) rotate(-0.3deg);\n}\n86% {\r\n    transform: translate(-14.399999999999999%, 144%) rotate(-0.6deg);\n}\n88% {\r\n    transform: translate(-13.5%, 156%) rotate(-1.5deg);\n}\n90% {\r\n    transform: translate(-7.199999999999999%, 169.49999999999997%) rotate(-7.800000000000001deg);\n}\n93% {\r\n    transform: translate(5.399999999999999%, 177%) rotate(-20.400000000000002deg);\n}\n95% {\r\n    transform: translate(12.9%, 180%) rotate(-27.900000000000002deg);\n}\n97% {\r\n    transform: translate(14.399999999999999%, 181.5%) rotate(-29.4deg);\n}\n99% {\r\n    transform: translate(14.7%, 181.5%) rotate(-29.7deg);\n}\n100% {\r\n    transform: translate(15%, 181.5%) rotate(-30deg);\n}\n}\n@-webkit-keyframes ld-leaf-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-14.7%, -117%) rotate(-0.3deg);\n}\n1% {\r\n    transform: translate(-14.399999999999999%, -112.5%) rotate(-0.6deg);\n}\n2% {\r\n    transform: translate(-13.8%, -102.00000000000001%) rotate(-1.2deg);\n}\n3% {\r\n    transform: translate(-13.5%, -100.5%) rotate(-1.5deg);\n}\n5% {\r\n    transform: translate(-7.199999999999999%, -87%) rotate(-7.800000000000001deg);\n}\n7% {\r\n    transform: translate(5.399999999999999%, -79.5%) rotate(-20.400000000000002deg);\n}\n10% {\r\n    transform: translate(12.9%, -76.5%) rotate(-27.900000000000002deg);\n}\n12% {\r\n    transform: translate(14.399999999999999%, -75%) rotate(-29.4deg);\n}\n13% {\r\n    transform: translate(14.7%, -75%) rotate(-29.7deg);\n}\n14% {\r\n    transform: translate(15%, -75%) rotate(-30deg);\n}\n15% {\r\n    transform: translate(14.399999999999999%, -69%) rotate(0.6deg);\n}\n16% {\r\n    transform: translate(13.8%, -58.5%) rotate(1.2deg);\n}\n19% {\r\n    transform: translate(7.199999999999999%, -45%) rotate(7.800000000000001deg);\n}\n21% {\r\n    transform: translate(-5.399999999999999%, -37.5%) rotate(20.400000000000002deg);\n}\n24% {\r\n    transform: translate(-12.9%, -33%) rotate(27.900000000000002deg);\n}\n26% {\r\n    transform: translate(-14.399999999999999%, -33%) rotate(29.4deg);\n}\n27% {\r\n    transform: translate(-14.7%, -31.5%) rotate(29.7deg);\n}\n28% {\r\n    transform: translate(-15%, -31.5%) rotate(30deg);\n}\n29% {\r\n    transform: translate(-14.399999999999999%, -27%) rotate(-0.6deg);\n}\n30% {\r\n    transform: translate(-13.8%, -16.5%) rotate(-1.2deg);\n}\n31% {\r\n    transform: translate(-13.5%, -15%) rotate(-1.5deg);\n}\n33% {\r\n    transform: translate(-7.199999999999999%, -1.5%) rotate(-7.800000000000001deg);\n}\n36% {\r\n    transform: translate(5.399999999999999%, 4.5%) rotate(-20.400000000000002deg);\n}\n38% {\r\n    transform: translate(12.9%, 9%) rotate(-27.900000000000002deg);\n}\n40% {\r\n    transform: translate(14.399999999999999%, 10.500000000000002%) rotate(-29.4deg);\n}\n41% {\r\n    transform: translate(14.7%, 10.500000000000002%) rotate(-29.7deg);\n}\n42% {\r\n    transform: translate(15%, 10.500000000000002%) rotate(-30deg);\n}\n43% {\r\n    transform: translate(15%, 10.500000000000002%) rotate(-30deg);\n}\n43% {\r\n    transform: translate(14.7%, 10.500000000000002%) rotate(0.3deg);\n}\n43% {\r\n    transform: translate(14.399999999999999%, 16.5%) rotate(0.6deg);\n}\n45% {\r\n    transform: translate(13.8%, 25.500000000000004%) rotate(1.2deg);\n}\n45% {\r\n    transform: translate(13.5%, 27%) rotate(1.5deg);\n}\n48% {\r\n    transform: translate(7.199999999999999%, 40.5%) rotate(7.800000000000001deg);\n}\n50% {\r\n    transform: translate(-5.399999999999999%, 48%) rotate(20.400000000000002deg);\n}\n52% {\r\n    transform: translate(-12.9%, 51.00000000000001%) rotate(27.900000000000002deg);\n}\n54% {\r\n    transform: translate(-14.399999999999999%, 52.5%) rotate(29.4deg);\n}\n56% {\r\n    transform: translate(-14.7%, 54%) rotate(29.7deg);\n}\n57% {\r\n    transform: translate(-14.7%, 54%) rotate(-0.3deg);\n}\n58% {\r\n    transform: translate(-14.399999999999999%, 58.5%) rotate(-0.6deg);\n}\n59% {\r\n    transform: translate(-13.5%, 70.5%) rotate(-1.5deg);\n}\n62% {\r\n    transform: translate(-7.199999999999999%, 84.00000000000001%) rotate(-7.800000000000001deg);\n}\n64% {\r\n    transform: translate(5.399999999999999%, 91.5%) rotate(-20.400000000000002deg);\n}\n67% {\r\n    transform: translate(12.9%, 94.5%) rotate(-27.900000000000002deg);\n}\n69% {\r\n    transform: translate(14.399999999999999%, 96%) rotate(-29.4deg);\n}\n70% {\r\n    transform: translate(14.7%, 96%) rotate(-29.7deg);\n}\n71% {\r\n    transform: translate(15%, 96%) rotate(-30deg);\n}\n72% {\r\n    transform: translate(14.399999999999999%, 102.00000000000001%) rotate(0.6deg);\n}\n73% {\r\n    transform: translate(13.8%, 111%) rotate(1.2deg);\n}\n74% {\r\n    transform: translate(13.5%, 112.5%) rotate(1.5deg);\n}\n76% {\r\n    transform: translate(7.199999999999999%, 126%) rotate(7.800000000000001deg);\n}\n79% {\r\n    transform: translate(-5.399999999999999%, 133.5%) rotate(20.400000000000002deg);\n}\n81% {\r\n    transform: translate(-12.9%, 138%) rotate(27.900000000000002deg);\n}\n83% {\r\n    transform: translate(-14.399999999999999%, 139.5%) rotate(29.4deg);\n}\n84% {\r\n    transform: translate(-14.7%, 139.5%) rotate(29.7deg);\n}\n85% {\r\n    transform: translate(-15%, 139.5%) rotate(30deg);\n}\n86% {\r\n    transform: translate(-14.7%, 139.5%) rotate(-0.3deg);\n}\n86% {\r\n    transform: translate(-14.399999999999999%, 144%) rotate(-0.6deg);\n}\n88% {\r\n    transform: translate(-13.5%, 156%) rotate(-1.5deg);\n}\n90% {\r\n    transform: translate(-7.199999999999999%, 169.49999999999997%) rotate(-7.800000000000001deg);\n}\n93% {\r\n    transform: translate(5.399999999999999%, 177%) rotate(-20.400000000000002deg);\n}\n95% {\r\n    transform: translate(12.9%, 180%) rotate(-27.900000000000002deg);\n}\n97% {\r\n    transform: translate(14.399999999999999%, 181.5%) rotate(-29.4deg);\n}\n99% {\r\n    transform: translate(14.7%, 181.5%) rotate(-29.7deg);\n}\n100% {\r\n    transform: translate(15%, 181.5%) rotate(-30deg);\n}\n}\n.ld.ld-leaf[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-leaf-data-v-5e7ff57a 4s infinite cubic-bezier(0.1, 0.5, 0.1, 0.5);\r\n  animation: ld-leaf-data-v-5e7ff57a 4s infinite cubic-bezier(0.1, 0.5, 0.1, 0.5);\n}\n@keyframes ld-slot-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -160%);\n}\n9.09% {\r\n    transform: translate(0, 160%);\n}\n9.1% {\r\n    transform: translate(0, -160%);\n}\n16.99% {\r\n    transform: translate(0, 160%);\n}\n17% {\r\n    transform: translate(0, -160%);\n}\n23.79% {\r\n    transform: translate(0, 160%);\n}\n23.8% {\r\n    transform: translate(0, -160%);\n}\n29.59% {\r\n    transform: translate(0, 160%);\n}\n29.6% {\r\n    transform: translate(0, -160%);\n}\n34.49% {\r\n    transform: translate(0, 160%);\n}\n34.5% {\r\n    transform: translate(0, -160%);\n}\n38.49% {\r\n    transform: translate(0, 160%);\n}\n38.5% {\r\n    transform: translate(0, -160%);\n}\n41.79% {\r\n    transform: translate(0, 160%);\n}\n41.8% {\r\n    transform: translate(0, -160%);\n}\n44.39% {\r\n    transform: translate(0, 160%);\n}\n44.4% {\r\n    transform: translate(0, -160%);\n}\n46.29% {\r\n    transform: translate(0, 160%);\n}\n46.3% {\r\n    transform: translate(0, -160%);\n}\n47.79% {\r\n    transform: translate(0, 160%);\n}\n47.8% {\r\n    transform: translate(0, -160%);\n}\n48.79% {\r\n    transform: translate(0, 160%);\n}\n48.8% {\r\n    transform: translate(0, -160%);\n}\n49.39% {\r\n    transform: translate(0, 160%);\n}\n49.4% {\r\n    transform: translate(0, -160%);\n}\n49.79% {\r\n    transform: translate(0, 160%);\n}\n49.8% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n50.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n50.2% {\r\n    transform: translate(0, -160%);\n}\n50.59% {\r\n    transform: translate(0, 160%);\n}\n50.6% {\r\n    transform: translate(0, -160%);\n}\n51.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n51.2% {\r\n    transform: translate(0, -160%);\n}\n52.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n52.2% {\r\n    transform: translate(0, -160%);\n}\n53.690000000000005% {\r\n    transform: translate(0, 160%);\n}\n53.7% {\r\n    transform: translate(0, -160%);\n}\n55.59% {\r\n    transform: translate(0, 160%);\n}\n55.6% {\r\n    transform: translate(0, -160%);\n}\n58.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n58.2% {\r\n    transform: translate(0, -160%);\n}\n61.49% {\r\n    transform: translate(0, 160%);\n}\n61.5% {\r\n    transform: translate(0, -160%);\n}\n65.49% {\r\n    transform: translate(0, 160%);\n}\n65.5% {\r\n    transform: translate(0, -160%);\n}\n70.39% {\r\n    transform: translate(0, 160%);\n}\n70.4% {\r\n    transform: translate(0, -160%);\n}\n76.19% {\r\n    transform: translate(0, 160%);\n}\n76.2% {\r\n    transform: translate(0, -160%);\n}\n82.99% {\r\n    transform: translate(0, 160%);\n}\n83% {\r\n    transform: translate(0, -160%);\n}\n90.89% {\r\n    transform: translate(0, 160%);\n}\n90.9% {\r\n    transform: translate(0, -160%);\n}\n99.99% {\r\n    transform: translate(0, 160%);\n}\n100% {\r\n    transform: translate(0, -160%);\n}\n}\n@-webkit-keyframes ld-slot-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -160%);\n}\n9.09% {\r\n    transform: translate(0, 160%);\n}\n9.1% {\r\n    transform: translate(0, -160%);\n}\n16.99% {\r\n    transform: translate(0, 160%);\n}\n17% {\r\n    transform: translate(0, -160%);\n}\n23.79% {\r\n    transform: translate(0, 160%);\n}\n23.8% {\r\n    transform: translate(0, -160%);\n}\n29.59% {\r\n    transform: translate(0, 160%);\n}\n29.6% {\r\n    transform: translate(0, -160%);\n}\n34.49% {\r\n    transform: translate(0, 160%);\n}\n34.5% {\r\n    transform: translate(0, -160%);\n}\n38.49% {\r\n    transform: translate(0, 160%);\n}\n38.5% {\r\n    transform: translate(0, -160%);\n}\n41.79% {\r\n    transform: translate(0, 160%);\n}\n41.8% {\r\n    transform: translate(0, -160%);\n}\n44.39% {\r\n    transform: translate(0, 160%);\n}\n44.4% {\r\n    transform: translate(0, -160%);\n}\n46.29% {\r\n    transform: translate(0, 160%);\n}\n46.3% {\r\n    transform: translate(0, -160%);\n}\n47.79% {\r\n    transform: translate(0, 160%);\n}\n47.8% {\r\n    transform: translate(0, -160%);\n}\n48.79% {\r\n    transform: translate(0, 160%);\n}\n48.8% {\r\n    transform: translate(0, -160%);\n}\n49.39% {\r\n    transform: translate(0, 160%);\n}\n49.4% {\r\n    transform: translate(0, -160%);\n}\n49.79% {\r\n    transform: translate(0, 160%);\n}\n49.8% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n49.99% {\r\n    transform: translate(0, 160%);\n}\n50% {\r\n    transform: translate(0, -160%);\n}\n50.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n50.2% {\r\n    transform: translate(0, -160%);\n}\n50.59% {\r\n    transform: translate(0, 160%);\n}\n50.6% {\r\n    transform: translate(0, -160%);\n}\n51.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n51.2% {\r\n    transform: translate(0, -160%);\n}\n52.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n52.2% {\r\n    transform: translate(0, -160%);\n}\n53.690000000000005% {\r\n    transform: translate(0, 160%);\n}\n53.7% {\r\n    transform: translate(0, -160%);\n}\n55.59% {\r\n    transform: translate(0, 160%);\n}\n55.6% {\r\n    transform: translate(0, -160%);\n}\n58.190000000000005% {\r\n    transform: translate(0, 160%);\n}\n58.2% {\r\n    transform: translate(0, -160%);\n}\n61.49% {\r\n    transform: translate(0, 160%);\n}\n61.5% {\r\n    transform: translate(0, -160%);\n}\n65.49% {\r\n    transform: translate(0, 160%);\n}\n65.5% {\r\n    transform: translate(0, -160%);\n}\n70.39% {\r\n    transform: translate(0, 160%);\n}\n70.4% {\r\n    transform: translate(0, -160%);\n}\n76.19% {\r\n    transform: translate(0, 160%);\n}\n76.2% {\r\n    transform: translate(0, -160%);\n}\n82.99% {\r\n    transform: translate(0, 160%);\n}\n83% {\r\n    transform: translate(0, -160%);\n}\n90.89% {\r\n    transform: translate(0, 160%);\n}\n90.9% {\r\n    transform: translate(0, -160%);\n}\n99.99% {\r\n    transform: translate(0, 160%);\n}\n100% {\r\n    transform: translate(0, -160%);\n}\n}\n.ld.ld-slot[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slot-data-v-5e7ff57a 6s infinite linear;\r\n  animation: ld-slot-data-v-5e7ff57a 6s infinite linear;\n}\n@keyframes ld-bounce-px-data-v-5e7ff57a {\n0%, 90% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n10% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0, 30px) scaleY(0.5);\n}\n10% {\r\n    transform: translate(0, 5px) scaleY(1.1);\n}\n50% {\r\n    transform: translate(0, -37px) scaleY(1.1);\n}\n90% {\r\n    transform: translate(0, 5px) scaleY(1.1);\n}\n100% {\r\n    transform: translate(0, 30px) scaleY(0.5);\n}\n}\n@-webkit-keyframes ld-bounce-px-data-v-5e7ff57a {\n0%, 90% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n10% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0, 30px) scaleY(0.5);\n}\n10% {\r\n    transform: translate(0, 5px) scaleY(1.1);\n}\n50% {\r\n    transform: translate(0, -37px) scaleY(1.1);\n}\n90% {\r\n    transform: translate(0, 5px) scaleY(1.1);\n}\n100% {\r\n    transform: translate(0, 30px) scaleY(0.5);\n}\n}\n.ld.ld-bounce-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-px-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-bounce-px-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-bounce-px-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(80px, -20px);\n}\n12.5% {\r\n    transform: translate(60px, -12px);\n}\n25% {\r\n    transform: translate(40px, 0);\n}\n37.5% {\r\n    transform: translate(25px, -12px);\n}\n50% {\r\n    transform: translate(0, -20px);\n}\n62.5% {\r\n    transform: translate(-25px, -12px);\n}\n75% {\r\n    transform: translate(-40px, 0);\n}\n87.5% {\r\n    transform: translate(-60px, -12px);\n}\n100% {\r\n    transform: translate(-80px, -20px);\n}\n}\n@-webkit-keyframes ld-bounce-px-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(80px, -20px);\n}\n12.5% {\r\n    transform: translate(60px, -12px);\n}\n25% {\r\n    transform: translate(40px, 0);\n}\n37.5% {\r\n    transform: translate(25px, -12px);\n}\n50% {\r\n    transform: translate(0, -20px);\n}\n62.5% {\r\n    transform: translate(-25px, -12px);\n}\n75% {\r\n    transform: translate(-40px, 0);\n}\n87.5% {\r\n    transform: translate(-60px, -12px);\n}\n100% {\r\n    transform: translate(-80px, -20px);\n}\n}\n.ld.ld-bounce-px-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-px-rtl-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-bounce-px-rtl-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-bounce-px-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-80px, -20px);\n}\n12.5% {\r\n    transform: translate(-60px, -12px);\n}\n25% {\r\n    transform: translate(-50px, 0);\n}\n37.5% {\r\n    transform: translate(-25px, -12px);\n}\n50% {\r\n    transform: translate(0, -20px);\n}\n62.5% {\r\n    transform: translate(25px, -12px);\n}\n75% {\r\n    transform: translate(50px, 0);\n}\n87.5% {\r\n    transform: translate(60px, -12px);\n}\n100% {\r\n    transform: translate(80px, -20px);\n}\n}\n@-webkit-keyframes ld-bounce-px-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-80px, -20px);\n}\n12.5% {\r\n    transform: translate(-60px, -12px);\n}\n25% {\r\n    transform: translate(-50px, 0);\n}\n37.5% {\r\n    transform: translate(-25px, -12px);\n}\n50% {\r\n    transform: translate(0, -20px);\n}\n62.5% {\r\n    transform: translate(25px, -12px);\n}\n75% {\r\n    transform: translate(50px, 0);\n}\n87.5% {\r\n    transform: translate(60px, -12px);\n}\n100% {\r\n    transform: translate(80px, -20px);\n}\n}\n.ld.ld-bounce-px-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-px-ltr-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-bounce-px-ltr-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-bounce-a-px-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n12.5%, 37.5%, 62.5%, 87.5% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n12.5% {\r\n    transform: translate(5px, -28px);\n}\n25% {\r\n    transform: translate(10px, 0);\n}\n37.5% {\r\n    transform: translate(5px, -28px);\n}\n50% {\r\n    transform: translate(0, 0);\n}\n62.5% {\r\n    transform: translate(-5px, -28px);\n}\n75% {\r\n    transform: translate(-10px, 0);\n}\n87.5% {\r\n    transform: translate(-5px, -28px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-bounce-a-px-data-v-5e7ff57a {\n0%, 25%, 50%, 75%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);\n}\n12.5%, 37.5%, 62.5%, 87.5% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\r\n            animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n12.5% {\r\n    transform: translate(5px, -28px);\n}\n25% {\r\n    transform: translate(10px, 0);\n}\n37.5% {\r\n    transform: translate(5px, -28px);\n}\n50% {\r\n    transform: translate(0, 0);\n}\n62.5% {\r\n    transform: translate(-5px, -28px);\n}\n75% {\r\n    transform: translate(-10px, 0);\n}\n87.5% {\r\n    transform: translate(-5px, -28px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-bounce-a-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-bounce-a-px-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-bounce-a-px-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-float-px-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n0% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n30% {\r\n    transform: translate(0, -10px);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n50% {\r\n    transform: translate(0, -10px);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n100% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n}\n@-webkit-keyframes ld-float-px-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: linear;\r\n            animation-timing-function: linear;\n}\n0% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n30% {\r\n    transform: translate(0, -10px);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n50% {\r\n    transform: translate(0, -10px);\r\n    box-shadow: 0 5px 5px rgba(0,0,0,0.3);\n}\n100% {\r\n    transform: translate(0, 0);\r\n    box-shadow: 0 0 0 rgba(0,0,0,0.3);\n}\n}\n.ld.ld-float-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-float-px-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-float-px-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-hit-px-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n    transform: scale(0) translate(0, 0) skewX(0);\n}\n20% {\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n100% {\r\n    transform: scale(1) translate(0, 150px) skewX(20deg);\n}\n}\n@-webkit-keyframes ld-hit-px-data-v-5e7ff57a {\n0% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n    transform: scale(0) translate(0, 0) skewX(0);\n}\n20% {\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(1, 0, 1, 0.5);\r\n    transform: scale(1) translate(0, 0) skewX(20deg);\n}\n100% {\r\n    transform: scale(1) translate(0, 150px) skewX(20deg);\n}\n}\n.ld.ld-hit-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-hit-px-data-v-5e7ff57a 2s infinite;\r\n  animation: ld-hit-px-data-v-5e7ff57a 2s infinite;\n}\n@keyframes ld-jelly-px-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n16.6% {\r\n    transform: translate(-30px, 0) skewX(30deg);\n}\n33.3% {\r\n    transform: translate(25px, 0) skewX(-20deg);\n}\n50% {\r\n    transform: translate(-12px, 0) skewX(10deg);\n}\n66.6% {\r\n    transform: translate(6px, 0) skewX(-5deg);\n}\n83.3% {\r\n    transform: translate(-2.5px, 0) skewX(2deg);\n}\n100% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n}\n@-webkit-keyframes ld-jelly-px-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n16.6% {\r\n    transform: translate(-30px, 0) skewX(30deg);\n}\n33.3% {\r\n    transform: translate(25px, 0) skewX(-20deg);\n}\n50% {\r\n    transform: translate(-12px, 0) skewX(10deg);\n}\n66.6% {\r\n    transform: translate(6px, 0) skewX(-5deg);\n}\n83.3% {\r\n    transform: translate(-2.5px, 0) skewX(2deg);\n}\n100% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n}\n.ld.ld-jelly-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jelly-px-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-jelly-px-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-jump-px-data-v-5e7ff57a {\n0%, 28%, 48%, 64%, 76%, 86%, 93%, 100% {\r\n    -webkit-animation-timing-function: ease-out;\r\n            animation-timing-function: ease-out;\n}\n14%, 38%, 56%, 70%, 81%, 90%, 97% {\r\n    -webkit-animation-timing-function: ease-in;\r\n            animation-timing-function: ease-in;\n}\n0% {\r\n    transform: translateY(0px);\n}\n14% {\r\n    transform: translateY(-27px);\n}\n28% {\r\n    transform: translateY(0px);\n}\n38% {\r\n    transform: translateY(-20px);\n}\n48% {\r\n    transform: translateY(0px);\n}\n56% {\r\n    transform: translateY(-16px);\n}\n64% {\r\n    transform: translateY(0px);\n}\n70% {\r\n    transform: translateY(-12px);\n}\n76% {\r\n    transform: translateY(0px);\n}\n81% {\r\n    transform: translateY(-7.5px);\n}\n86% {\r\n    transform: translateY(0px);\n}\n90% {\r\n    transform: translateY(-3px);\n}\n93% {\r\n    transform: translateY(0px);\n}\n97% {\r\n    transform: translateY(-1.5px);\n}\n100% {\r\n    transform: translateY(0px);\n}\n}\n@-webkit-keyframes ld-jump-px-data-v-5e7ff57a {\n0%, 28%, 48%, 64%, 76%, 86%, 93%, 100% {\r\n    -webkit-animation-timing-function: ease-out;\r\n            animation-timing-function: ease-out;\n}\n14%, 38%, 56%, 70%, 81%, 90%, 97% {\r\n    -webkit-animation-timing-function: ease-in;\r\n            animation-timing-function: ease-in;\n}\n0% {\r\n    transform: translateY(0px);\n}\n14% {\r\n    transform: translateY(-27px);\n}\n28% {\r\n    transform: translateY(0px);\n}\n38% {\r\n    transform: translateY(-20px);\n}\n48% {\r\n    transform: translateY(0px);\n}\n56% {\r\n    transform: translateY(-16px);\n}\n64% {\r\n    transform: translateY(0px);\n}\n70% {\r\n    transform: translateY(-12px);\n}\n76% {\r\n    transform: translateY(0px);\n}\n81% {\r\n    transform: translateY(-7.5px);\n}\n86% {\r\n    transform: translateY(0px);\n}\n90% {\r\n    transform: translateY(-3px);\n}\n93% {\r\n    transform: translateY(0px);\n}\n97% {\r\n    transform: translateY(-1.5px);\n}\n100% {\r\n    transform: translateY(0px);\n}\n}\n.ld.ld-jump-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jump-px-data-v-5e7ff57a 1.5s ease-in infinite;\r\n  animation: ld-jump-px-data-v-5e7ff57a 1.5s ease-in infinite;\n}\n@keyframes ld-orbit-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(30px, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(21px, 21px) rotate(45deg);\n}\n25% {\r\n    transform: translate(0, 30px) rotate(90deg);\n}\n37.5% {\r\n    transform: translate(-21px, 21px) rotate(135deg);\n}\n50% {\r\n    transform: translate(-30px, 0) rotate(180deg);\n}\n62.5% {\r\n    transform: translate(-21px, -21px) rotate(225deg);\n}\n75% {\r\n    transform: translate(0, -30px) rotate(270deg);\n}\n87.5% {\r\n    transform: translate(21px, -21px) rotate(315deg);\n}\n100% {\r\n    transform: translate(30px, 0) rotate(360deg);\n}\n}\n@-webkit-keyframes ld-orbit-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(30px, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(21px, 21px) rotate(45deg);\n}\n25% {\r\n    transform: translate(0, 30px) rotate(90deg);\n}\n37.5% {\r\n    transform: translate(-21px, 21px) rotate(135deg);\n}\n50% {\r\n    transform: translate(-30px, 0) rotate(180deg);\n}\n62.5% {\r\n    transform: translate(-21px, -21px) rotate(225deg);\n}\n75% {\r\n    transform: translate(0, -30px) rotate(270deg);\n}\n87.5% {\r\n    transform: translate(21px, -21px) rotate(315deg);\n}\n100% {\r\n    transform: translate(30px, 0) rotate(360deg);\n}\n}\n.ld.ld-orbit-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-orbit-px-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-orbit-px-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-rush-px-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(100px, 0) skewX(-45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(-20px, 0) skewX(35deg);\n}\n45% {\r\n    transform: translate(10px, 0) skewX(-15deg);\n}\n60% {\r\n    transform: translate(-5px, 0) skewX(7deg);\n}\n80% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(-150px, 0) skewX(-45deg);\n}\n}\n@-webkit-keyframes ld-rush-px-rtl-data-v-5e7ff57a {\n0% {\r\n    transform: translate(100px, 0) skewX(-45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(-20px, 0) skewX(35deg);\n}\n45% {\r\n    transform: translate(10px, 0) skewX(-15deg);\n}\n60% {\r\n    transform: translate(-5px, 0) skewX(7deg);\n}\n80% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(-150px, 0) skewX(-45deg);\n}\n}\n.ld.ld-rush-px-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rush-px-rtl-data-v-5e7ff57a 1.5s infinite linear;\r\n  animation: ld-rush-px-rtl-data-v-5e7ff57a 1.5s infinite linear;\n}\n@keyframes ld-rush-px-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-100px, 0) skewX(45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(20px, 0) skewX(-35deg);\n}\n45% {\r\n    transform: translate(-10px, 0) skewX(15deg);\n}\n60% {\r\n    transform: translate(5px, 0) skewX(-7deg);\n}\n80% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(150px, 0) skewX(45deg);\n}\n}\n@-webkit-keyframes ld-rush-px-ltr-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-100px, 0) skewX(45deg);\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n30% {\r\n    transform: translate(20px, 0) skewX(-35deg);\n}\n45% {\r\n    transform: translate(-10px, 0) skewX(15deg);\n}\n60% {\r\n    transform: translate(5px, 0) skewX(-7deg);\n}\n80% {\r\n    transform: translate(0, 0) skewX(0deg);\n}\n100% {\r\n    transform: translate(150px, 0) skewX(45deg);\n}\n}\n.ld.ld-rush-px-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-rush-px-ltr-data-v-5e7ff57a 1.5s infinite linear;\r\n  animation: ld-rush-px-ltr-data-v-5e7ff57a 1.5s infinite linear;\n}\n@keyframes ld-shake-px-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n16.6% {\r\n    transform: translate(-35px, 0);\n}\n33.3% {\r\n    transform: translate(25px, 0);\n}\n50% {\r\n    transform: translate(-12px, 0);\n}\n66.6% {\r\n    transform: translate(6px, 0);\n}\n83.3% {\r\n    transform: translate(-2.5px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-shake-px-data-v-5e7ff57a {\n0%, 16.6%, 33.3%, 50%, 66.6%, 83.3% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n16.6% {\r\n    transform: translate(-35px, 0);\n}\n33.3% {\r\n    transform: translate(25px, 0);\n}\n50% {\r\n    transform: translate(-12px, 0);\n}\n66.6% {\r\n    transform: translate(6px, 0);\n}\n83.3% {\r\n    transform: translate(-2.5px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-shake-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-shake-px-data-v-5e7ff57a 1s infinite linear;\r\n  animation: ld-shake-px-data-v-5e7ff57a 1s infinite linear;\n}\n@keyframes ld-slide-px-ltr-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(100px, 0);\n}\n50% {\r\n    transform: translate(-100px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-px-ltr-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(100px, 0);\n}\n50% {\r\n    transform: translate(-100px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-px-ltr[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-px-ltr-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-px-ltr-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-px-rtl-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(-100px, 0);\n}\n50% {\r\n    transform: translate(100px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-px-rtl-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(-100px, 0);\n}\n50% {\r\n    transform: translate(100px, 0);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-px-rtl[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-px-rtl-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-px-rtl-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-px-btt-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, -100px);\n}\n50% {\r\n    transform: translate(0, 100px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-px-btt-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, -100px);\n}\n50% {\r\n    transform: translate(0, 100px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-px-btt[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-px-btt-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-px-btt-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-slide-px-ttb-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n@-webkit-keyframes ld-slide-px-ttb-data-v-5e7ff57a {\n0%, 100% {\r\n    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\r\n            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n}\n50% {\r\n    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\r\n            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n}\n0% {\r\n    transform: translate(0, 0);\n}\n49.9% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n100% {\r\n    transform: translate(0, 0);\n}\n}\n.ld.ld-slide-px-ttb[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slide-px-ttb-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-slide-px-ttb-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-tremble-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(1px, 1px);\n}\n5% {\r\n    transform: translate(0, 1px);\n}\n10% {\r\n    transform: translate(1px, 2px);\n}\n15% {\r\n    transform: translate(2px, 1px);\n}\n20% {\r\n    transform: translate(3px, 0);\n}\n25% {\r\n    transform: translate(1px, 2px);\n}\n30% {\r\n    transform: translate(1px, 3px);\n}\n35% {\r\n    transform: translate(0, 1px);\n}\n40% {\r\n    transform: translate(1px, 1px);\n}\n45% {\r\n    transform: translate(1px, 0);\n}\n50% {\r\n    transform: translate(2px, 1px);\n}\n55% {\r\n    transform: translate(1px, 2px);\n}\n60% {\r\n    transform: translate(3px, 1px);\n}\n65% {\r\n    transform: translate(0, 2px);\n}\n70% {\r\n    transform: translate(3px, 0);\n}\n75% {\r\n    transform: translate(0, 0);\n}\n80% {\r\n    transform: translate(2px, 3px);\n}\n85% {\r\n    transform: translate(1px, 0);\n}\n90% {\r\n    transform: translate(0, 2px);\n}\n95% {\r\n    transform: translate(3px, 2px);\n}\n}\n@-webkit-keyframes ld-tremble-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(1px, 1px);\n}\n5% {\r\n    transform: translate(0, 1px);\n}\n10% {\r\n    transform: translate(1px, 2px);\n}\n15% {\r\n    transform: translate(2px, 1px);\n}\n20% {\r\n    transform: translate(3px, 0);\n}\n25% {\r\n    transform: translate(1px, 2px);\n}\n30% {\r\n    transform: translate(1px, 3px);\n}\n35% {\r\n    transform: translate(0, 1px);\n}\n40% {\r\n    transform: translate(1px, 1px);\n}\n45% {\r\n    transform: translate(1px, 0);\n}\n50% {\r\n    transform: translate(2px, 1px);\n}\n55% {\r\n    transform: translate(1px, 2px);\n}\n60% {\r\n    transform: translate(3px, 1px);\n}\n65% {\r\n    transform: translate(0, 2px);\n}\n70% {\r\n    transform: translate(3px, 0);\n}\n75% {\r\n    transform: translate(0, 0);\n}\n80% {\r\n    transform: translate(2px, 3px);\n}\n85% {\r\n    transform: translate(1px, 0);\n}\n90% {\r\n    transform: translate(0, 2px);\n}\n95% {\r\n    transform: translate(3px, 2px);\n}\n}\n.ld.ld-tremble-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-tremble-px-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-tremble-px-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-wander-px-h-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-35px, 0);\n}\n50% {\r\n    transform: translate(35px, 0);\n}\n100% {\r\n    transform: translate(-35px, 0);\n}\n}\n@-webkit-keyframes ld-wander-px-h-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-35px, 0);\n}\n50% {\r\n    transform: translate(35px, 0);\n}\n100% {\r\n    transform: translate(-35px, 0);\n}\n}\n.ld.ld-wander-px-h[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-wander-px-h-data-v-5e7ff57a 1s infinite ease-out;\r\n  animation: ld-wander-px-h-data-v-5e7ff57a 1s infinite ease-out;\n}\n@keyframes ld-wander-px-v-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -35px);\n}\n50% {\r\n    transform: translate(0, 35px);\n}\n100% {\r\n    transform: translate(0, -35px);\n}\n}\n@-webkit-keyframes ld-wander-px-v-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -35px);\n}\n50% {\r\n    transform: translate(0, 35px);\n}\n100% {\r\n    transform: translate(0, -35px);\n}\n}\n.ld.ld-wander-px-v[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-wander-px-v-data-v-5e7ff57a 1s infinite ease-out;\r\n  animation: ld-wander-px-v-data-v-5e7ff57a 1s infinite ease-out;\n}\n@keyframes ld-jingle-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -40px) rotate(0deg) translate(0, 40px);\n}\n4% {\r\n    transform: translate(0, -40px) rotate(11deg) translate(0, 40px);\n}\n10% {\r\n    transform: translate(0, -40px) rotate(15deg) translate(0, 40px);\n}\n18% {\r\n    transform: translate(0, -40px) rotate(-11deg) translate(0, 40px);\n}\n20% {\r\n    transform: translate(0, -40px) rotate(-13deg) translate(0, 40px);\n}\n21% {\r\n    transform: translate(0, -40px) rotate(-12deg) translate(0, 40px);\n}\n22% {\r\n    transform: translate(0, -40px) rotate(-10deg) translate(0, 40px);\n}\n24% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n26% {\r\n    transform: translate(0, -40px) rotate(3deg) translate(0, 40px);\n}\n28% {\r\n    transform: translate(0, -40px) rotate(9deg) translate(0, 40px);\n}\n30% {\r\n    transform: translate(0, -40px) rotate(10deg) translate(0, 40px);\n}\n31% {\r\n    transform: translate(0, -40px) rotate(9deg) translate(0, 40px);\n}\n33% {\r\n    transform: translate(0, -40px) rotate(5deg) translate(0, 40px);\n}\n34% {\r\n    transform: translate(0, -40px) rotate(1deg) translate(0, 40px);\n}\n36% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n39% {\r\n    transform: translate(0, -40px) rotate(-8deg) translate(0, 40px);\n}\n40% {\r\n    transform: translate(0, -40px) rotate(-7deg) translate(0, 40px);\n}\n44% {\r\n    transform: translate(0, -40px) rotate(3deg) translate(0, 40px);\n}\n47% {\r\n    transform: translate(0, -40px) rotate(7deg) translate(0, 40px);\n}\n56% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n63% {\r\n    transform: translate(0, -40px) rotate(1deg) translate(0, 40px);\n}\n75% {\r\n    transform: translate(0, -40px) rotate(-1deg) translate(0, 40px);\n}\n100% {\r\n    transform: translate(0, -40px) rotate(0deg) translate(0, 40px);\n}\n}\n@-webkit-keyframes ld-jingle-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -40px) rotate(0deg) translate(0, 40px);\n}\n4% {\r\n    transform: translate(0, -40px) rotate(11deg) translate(0, 40px);\n}\n10% {\r\n    transform: translate(0, -40px) rotate(15deg) translate(0, 40px);\n}\n18% {\r\n    transform: translate(0, -40px) rotate(-11deg) translate(0, 40px);\n}\n20% {\r\n    transform: translate(0, -40px) rotate(-13deg) translate(0, 40px);\n}\n21% {\r\n    transform: translate(0, -40px) rotate(-12deg) translate(0, 40px);\n}\n22% {\r\n    transform: translate(0, -40px) rotate(-10deg) translate(0, 40px);\n}\n24% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n26% {\r\n    transform: translate(0, -40px) rotate(3deg) translate(0, 40px);\n}\n28% {\r\n    transform: translate(0, -40px) rotate(9deg) translate(0, 40px);\n}\n30% {\r\n    transform: translate(0, -40px) rotate(10deg) translate(0, 40px);\n}\n31% {\r\n    transform: translate(0, -40px) rotate(9deg) translate(0, 40px);\n}\n33% {\r\n    transform: translate(0, -40px) rotate(5deg) translate(0, 40px);\n}\n34% {\r\n    transform: translate(0, -40px) rotate(1deg) translate(0, 40px);\n}\n36% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n39% {\r\n    transform: translate(0, -40px) rotate(-8deg) translate(0, 40px);\n}\n40% {\r\n    transform: translate(0, -40px) rotate(-7deg) translate(0, 40px);\n}\n44% {\r\n    transform: translate(0, -40px) rotate(3deg) translate(0, 40px);\n}\n47% {\r\n    transform: translate(0, -40px) rotate(7deg) translate(0, 40px);\n}\n56% {\r\n    transform: translate(0, -40px) rotate(-5deg) translate(0, 40px);\n}\n63% {\r\n    transform: translate(0, -40px) rotate(1deg) translate(0, 40px);\n}\n75% {\r\n    transform: translate(0, -40px) rotate(-1deg) translate(0, 40px);\n}\n100% {\r\n    transform: translate(0, -40px) rotate(0deg) translate(0, 40px);\n}\n}\n.ld.ld-jingle-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-jingle-px-data-v-5e7ff57a 1s infinite;\r\n  animation: ld-jingle-px-data-v-5e7ff57a 1s infinite;\n}\n@keyframes ld-swim-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(1px, -2px) rotate(3deg);\n}\n25% {\r\n    transform: translate(0, -3px) rotate(6deg);\n}\n37.5% {\r\n    transform: translate(-1px, -2px) rotate(3deg);\n}\n50% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n62.5% {\r\n    transform: translate(1px, 2px) rotate(-3deg);\n}\n75% {\r\n    transform: translate(0, 3px) rotate(-6deg);\n}\n87.5% {\r\n    transform: translate(-1px, 2px) rotate(-3deg);\n}\n100% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n}\n@-webkit-keyframes ld-swim-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n12.5% {\r\n    transform: translate(1px, -2px) rotate(3deg);\n}\n25% {\r\n    transform: translate(0, -3px) rotate(6deg);\n}\n37.5% {\r\n    transform: translate(-1px, -2px) rotate(3deg);\n}\n50% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n62.5% {\r\n    transform: translate(1px, 2px) rotate(-3deg);\n}\n75% {\r\n    transform: translate(0, 3px) rotate(-6deg);\n}\n87.5% {\r\n    transform: translate(-1px, 2px) rotate(-3deg);\n}\n100% {\r\n    transform: translate(0, 0) rotate(0deg);\n}\n}\n.ld.ld-swim-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-swim-px-data-v-5e7ff57a 3s infinite linear;\r\n  animation: ld-swim-px-data-v-5e7ff57a 3s infinite linear;\n}\n@keyframes ld-leaf-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-14.7px, -117px) rotate(-0.3deg);\n}\n1% {\r\n    transform: translate(-14.399999999999999px, -112.5px) rotate(-0.6deg);\n}\n2% {\r\n    transform: translate(-13.8px, -102.00000000000001px) rotate(-1.2deg);\n}\n3% {\r\n    transform: translate(-13.5px, -100.5px) rotate(-1.5deg);\n}\n5% {\r\n    transform: translate(-7.199999999999999px, -87px) rotate(-7.800000000000001deg);\n}\n7% {\r\n    transform: translate(5.399999999999999px, -79.5px) rotate(-20.400000000000002deg);\n}\n10% {\r\n    transform: translate(12.9px, -76.5px) rotate(-27.900000000000002deg);\n}\n12% {\r\n    transform: translate(14.399999999999999px, -75px) rotate(-29.4deg);\n}\n13% {\r\n    transform: translate(14.7px, -75px) rotate(-29.7deg);\n}\n14% {\r\n    transform: translate(15px, -75px) rotate(-30deg);\n}\n15% {\r\n    transform: translate(14.399999999999999px, -69px) rotate(0.6deg);\n}\n16% {\r\n    transform: translate(13.8px, -58.5px) rotate(1.2deg);\n}\n19% {\r\n    transform: translate(7.199999999999999px, -45px) rotate(7.800000000000001deg);\n}\n21% {\r\n    transform: translate(-5.399999999999999px, -37.5px) rotate(20.400000000000002deg);\n}\n24% {\r\n    transform: translate(-12.9px, -33px) rotate(27.900000000000002deg);\n}\n26% {\r\n    transform: translate(-14.399999999999999px, -33px) rotate(29.4deg);\n}\n27% {\r\n    transform: translate(-14.7px, -31.5px) rotate(29.7deg);\n}\n28% {\r\n    transform: translate(-15px, -31.5px) rotate(30deg);\n}\n29% {\r\n    transform: translate(-14.399999999999999px, -27px) rotate(-0.6deg);\n}\n30% {\r\n    transform: translate(-13.8px, -16.5px) rotate(-1.2deg);\n}\n31% {\r\n    transform: translate(-13.5px, -15px) rotate(-1.5deg);\n}\n33% {\r\n    transform: translate(-7.199999999999999px, -1.5px) rotate(-7.800000000000001deg);\n}\n36% {\r\n    transform: translate(5.399999999999999px, 4.5px) rotate(-20.400000000000002deg);\n}\n38% {\r\n    transform: translate(12.9px, 9px) rotate(-27.900000000000002deg);\n}\n40% {\r\n    transform: translate(14.399999999999999px, 10.500000000000002px) rotate(-29.4deg);\n}\n41% {\r\n    transform: translate(14.7px, 10.500000000000002px) rotate(-29.7deg);\n}\n42% {\r\n    transform: translate(15px, 10.500000000000002px) rotate(-30deg);\n}\n43% {\r\n    transform: translate(15px, 10.500000000000002px) rotate(-30deg);\n}\n43% {\r\n    transform: translate(14.7px, 10.500000000000002px) rotate(0.3deg);\n}\n43% {\r\n    transform: translate(14.399999999999999px, 16.5px) rotate(0.6deg);\n}\n45% {\r\n    transform: translate(13.8px, 25.500000000000004px) rotate(1.2deg);\n}\n45% {\r\n    transform: translate(13.5px, 27px) rotate(1.5deg);\n}\n48% {\r\n    transform: translate(7.199999999999999px, 40.5px) rotate(7.800000000000001deg);\n}\n50% {\r\n    transform: translate(-5.399999999999999px, 48px) rotate(20.400000000000002deg);\n}\n52% {\r\n    transform: translate(-12.9px, 51.00000000000001px) rotate(27.900000000000002deg);\n}\n54% {\r\n    transform: translate(-14.399999999999999px, 52.5px) rotate(29.4deg);\n}\n56% {\r\n    transform: translate(-14.7px, 54px) rotate(29.7deg);\n}\n57% {\r\n    transform: translate(-14.7px, 54px) rotate(-0.3deg);\n}\n58% {\r\n    transform: translate(-14.399999999999999px, 58.5px) rotate(-0.6deg);\n}\n59% {\r\n    transform: translate(-13.5px, 70.5px) rotate(-1.5deg);\n}\n62% {\r\n    transform: translate(-7.199999999999999px, 84.00000000000001px) rotate(-7.800000000000001deg);\n}\n64% {\r\n    transform: translate(5.399999999999999px, 91.5px) rotate(-20.400000000000002deg);\n}\n67% {\r\n    transform: translate(12.9px, 94.5px) rotate(-27.900000000000002deg);\n}\n69% {\r\n    transform: translate(14.399999999999999px, 96px) rotate(-29.4deg);\n}\n70% {\r\n    transform: translate(14.7px, 96px) rotate(-29.7deg);\n}\n71% {\r\n    transform: translate(15px, 96px) rotate(-30deg);\n}\n72% {\r\n    transform: translate(14.399999999999999px, 102.00000000000001px) rotate(0.6deg);\n}\n73% {\r\n    transform: translate(13.8px, 111px) rotate(1.2deg);\n}\n74% {\r\n    transform: translate(13.5px, 112.5px) rotate(1.5deg);\n}\n76% {\r\n    transform: translate(7.199999999999999px, 126px) rotate(7.800000000000001deg);\n}\n79% {\r\n    transform: translate(-5.399999999999999px, 133.5px) rotate(20.400000000000002deg);\n}\n81% {\r\n    transform: translate(-12.9px, 138px) rotate(27.900000000000002deg);\n}\n83% {\r\n    transform: translate(-14.399999999999999px, 139.5px) rotate(29.4deg);\n}\n84% {\r\n    transform: translate(-14.7px, 139.5px) rotate(29.7deg);\n}\n85% {\r\n    transform: translate(-15px, 139.5px) rotate(30deg);\n}\n86% {\r\n    transform: translate(-14.7px, 139.5px) rotate(-0.3deg);\n}\n86% {\r\n    transform: translate(-14.399999999999999px, 144px) rotate(-0.6deg);\n}\n88% {\r\n    transform: translate(-13.5px, 156px) rotate(-1.5deg);\n}\n90% {\r\n    transform: translate(-7.199999999999999px, 169.49999999999997px) rotate(-7.800000000000001deg);\n}\n93% {\r\n    transform: translate(5.399999999999999px, 177px) rotate(-20.400000000000002deg);\n}\n95% {\r\n    transform: translate(12.9px, 180px) rotate(-27.900000000000002deg);\n}\n97% {\r\n    transform: translate(14.399999999999999px, 181.5px) rotate(-29.4deg);\n}\n99% {\r\n    transform: translate(14.7px, 181.5px) rotate(-29.7deg);\n}\n100% {\r\n    transform: translate(15px, 181.5px) rotate(-30deg);\n}\n}\n@-webkit-keyframes ld-leaf-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(-14.7px, -117px) rotate(-0.3deg);\n}\n1% {\r\n    transform: translate(-14.399999999999999px, -112.5px) rotate(-0.6deg);\n}\n2% {\r\n    transform: translate(-13.8px, -102.00000000000001px) rotate(-1.2deg);\n}\n3% {\r\n    transform: translate(-13.5px, -100.5px) rotate(-1.5deg);\n}\n5% {\r\n    transform: translate(-7.199999999999999px, -87px) rotate(-7.800000000000001deg);\n}\n7% {\r\n    transform: translate(5.399999999999999px, -79.5px) rotate(-20.400000000000002deg);\n}\n10% {\r\n    transform: translate(12.9px, -76.5px) rotate(-27.900000000000002deg);\n}\n12% {\r\n    transform: translate(14.399999999999999px, -75px) rotate(-29.4deg);\n}\n13% {\r\n    transform: translate(14.7px, -75px) rotate(-29.7deg);\n}\n14% {\r\n    transform: translate(15px, -75px) rotate(-30deg);\n}\n15% {\r\n    transform: translate(14.399999999999999px, -69px) rotate(0.6deg);\n}\n16% {\r\n    transform: translate(13.8px, -58.5px) rotate(1.2deg);\n}\n19% {\r\n    transform: translate(7.199999999999999px, -45px) rotate(7.800000000000001deg);\n}\n21% {\r\n    transform: translate(-5.399999999999999px, -37.5px) rotate(20.400000000000002deg);\n}\n24% {\r\n    transform: translate(-12.9px, -33px) rotate(27.900000000000002deg);\n}\n26% {\r\n    transform: translate(-14.399999999999999px, -33px) rotate(29.4deg);\n}\n27% {\r\n    transform: translate(-14.7px, -31.5px) rotate(29.7deg);\n}\n28% {\r\n    transform: translate(-15px, -31.5px) rotate(30deg);\n}\n29% {\r\n    transform: translate(-14.399999999999999px, -27px) rotate(-0.6deg);\n}\n30% {\r\n    transform: translate(-13.8px, -16.5px) rotate(-1.2deg);\n}\n31% {\r\n    transform: translate(-13.5px, -15px) rotate(-1.5deg);\n}\n33% {\r\n    transform: translate(-7.199999999999999px, -1.5px) rotate(-7.800000000000001deg);\n}\n36% {\r\n    transform: translate(5.399999999999999px, 4.5px) rotate(-20.400000000000002deg);\n}\n38% {\r\n    transform: translate(12.9px, 9px) rotate(-27.900000000000002deg);\n}\n40% {\r\n    transform: translate(14.399999999999999px, 10.500000000000002px) rotate(-29.4deg);\n}\n41% {\r\n    transform: translate(14.7px, 10.500000000000002px) rotate(-29.7deg);\n}\n42% {\r\n    transform: translate(15px, 10.500000000000002px) rotate(-30deg);\n}\n43% {\r\n    transform: translate(15px, 10.500000000000002px) rotate(-30deg);\n}\n43% {\r\n    transform: translate(14.7px, 10.500000000000002px) rotate(0.3deg);\n}\n43% {\r\n    transform: translate(14.399999999999999px, 16.5px) rotate(0.6deg);\n}\n45% {\r\n    transform: translate(13.8px, 25.500000000000004px) rotate(1.2deg);\n}\n45% {\r\n    transform: translate(13.5px, 27px) rotate(1.5deg);\n}\n48% {\r\n    transform: translate(7.199999999999999px, 40.5px) rotate(7.800000000000001deg);\n}\n50% {\r\n    transform: translate(-5.399999999999999px, 48px) rotate(20.400000000000002deg);\n}\n52% {\r\n    transform: translate(-12.9px, 51.00000000000001px) rotate(27.900000000000002deg);\n}\n54% {\r\n    transform: translate(-14.399999999999999px, 52.5px) rotate(29.4deg);\n}\n56% {\r\n    transform: translate(-14.7px, 54px) rotate(29.7deg);\n}\n57% {\r\n    transform: translate(-14.7px, 54px) rotate(-0.3deg);\n}\n58% {\r\n    transform: translate(-14.399999999999999px, 58.5px) rotate(-0.6deg);\n}\n59% {\r\n    transform: translate(-13.5px, 70.5px) rotate(-1.5deg);\n}\n62% {\r\n    transform: translate(-7.199999999999999px, 84.00000000000001px) rotate(-7.800000000000001deg);\n}\n64% {\r\n    transform: translate(5.399999999999999px, 91.5px) rotate(-20.400000000000002deg);\n}\n67% {\r\n    transform: translate(12.9px, 94.5px) rotate(-27.900000000000002deg);\n}\n69% {\r\n    transform: translate(14.399999999999999px, 96px) rotate(-29.4deg);\n}\n70% {\r\n    transform: translate(14.7px, 96px) rotate(-29.7deg);\n}\n71% {\r\n    transform: translate(15px, 96px) rotate(-30deg);\n}\n72% {\r\n    transform: translate(14.399999999999999px, 102.00000000000001px) rotate(0.6deg);\n}\n73% {\r\n    transform: translate(13.8px, 111px) rotate(1.2deg);\n}\n74% {\r\n    transform: translate(13.5px, 112.5px) rotate(1.5deg);\n}\n76% {\r\n    transform: translate(7.199999999999999px, 126px) rotate(7.800000000000001deg);\n}\n79% {\r\n    transform: translate(-5.399999999999999px, 133.5px) rotate(20.400000000000002deg);\n}\n81% {\r\n    transform: translate(-12.9px, 138px) rotate(27.900000000000002deg);\n}\n83% {\r\n    transform: translate(-14.399999999999999px, 139.5px) rotate(29.4deg);\n}\n84% {\r\n    transform: translate(-14.7px, 139.5px) rotate(29.7deg);\n}\n85% {\r\n    transform: translate(-15px, 139.5px) rotate(30deg);\n}\n86% {\r\n    transform: translate(-14.7px, 139.5px) rotate(-0.3deg);\n}\n86% {\r\n    transform: translate(-14.399999999999999px, 144px) rotate(-0.6deg);\n}\n88% {\r\n    transform: translate(-13.5px, 156px) rotate(-1.5deg);\n}\n90% {\r\n    transform: translate(-7.199999999999999px, 169.49999999999997px) rotate(-7.800000000000001deg);\n}\n93% {\r\n    transform: translate(5.399999999999999px, 177px) rotate(-20.400000000000002deg);\n}\n95% {\r\n    transform: translate(12.9px, 180px) rotate(-27.900000000000002deg);\n}\n97% {\r\n    transform: translate(14.399999999999999px, 181.5px) rotate(-29.4deg);\n}\n99% {\r\n    transform: translate(14.7px, 181.5px) rotate(-29.7deg);\n}\n100% {\r\n    transform: translate(15px, 181.5px) rotate(-30deg);\n}\n}\n.ld.ld-leaf-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-leaf-px-data-v-5e7ff57a 4s infinite cubic-bezier(0.1, 0.5, 0.1, 0.5);\r\n  animation: ld-leaf-px-data-v-5e7ff57a 4s infinite cubic-bezier(0.1, 0.5, 0.1, 0.5);\n}\n@keyframes ld-slot-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -100px);\n}\n9.09% {\r\n    transform: translate(0, 100px);\n}\n9.1% {\r\n    transform: translate(0, -100px);\n}\n16.99% {\r\n    transform: translate(0, 100px);\n}\n17% {\r\n    transform: translate(0, -100px);\n}\n23.79% {\r\n    transform: translate(0, 100px);\n}\n23.8% {\r\n    transform: translate(0, -100px);\n}\n29.59% {\r\n    transform: translate(0, 100px);\n}\n29.6% {\r\n    transform: translate(0, -100px);\n}\n34.49% {\r\n    transform: translate(0, 100px);\n}\n34.5% {\r\n    transform: translate(0, -100px);\n}\n38.49% {\r\n    transform: translate(0, 100px);\n}\n38.5% {\r\n    transform: translate(0, -100px);\n}\n41.79% {\r\n    transform: translate(0, 100px);\n}\n41.8% {\r\n    transform: translate(0, -100px);\n}\n44.39% {\r\n    transform: translate(0, 100px);\n}\n44.4% {\r\n    transform: translate(0, -100px);\n}\n46.29% {\r\n    transform: translate(0, 100px);\n}\n46.3% {\r\n    transform: translate(0, -100px);\n}\n47.79% {\r\n    transform: translate(0, 100px);\n}\n47.8% {\r\n    transform: translate(0, -100px);\n}\n48.79% {\r\n    transform: translate(0, 100px);\n}\n48.8% {\r\n    transform: translate(0, -100px);\n}\n49.39% {\r\n    transform: translate(0, 100px);\n}\n49.4% {\r\n    transform: translate(0, -100px);\n}\n49.79% {\r\n    transform: translate(0, 100px);\n}\n49.8% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n50.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n50.2% {\r\n    transform: translate(0, -100px);\n}\n50.59% {\r\n    transform: translate(0, 100px);\n}\n50.6% {\r\n    transform: translate(0, -100px);\n}\n51.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n51.2% {\r\n    transform: translate(0, -100px);\n}\n52.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n52.2% {\r\n    transform: translate(0, -100px);\n}\n53.690000000000005% {\r\n    transform: translate(0, 100px);\n}\n53.7% {\r\n    transform: translate(0, -100px);\n}\n55.59% {\r\n    transform: translate(0, 100px);\n}\n55.6% {\r\n    transform: translate(0, -100px);\n}\n58.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n58.2% {\r\n    transform: translate(0, -100px);\n}\n61.49% {\r\n    transform: translate(0, 100px);\n}\n61.5% {\r\n    transform: translate(0, -100px);\n}\n65.49% {\r\n    transform: translate(0, 100px);\n}\n65.5% {\r\n    transform: translate(0, -100px);\n}\n70.39% {\r\n    transform: translate(0, 100px);\n}\n70.4% {\r\n    transform: translate(0, -100px);\n}\n76.19% {\r\n    transform: translate(0, 100px);\n}\n76.2% {\r\n    transform: translate(0, -100px);\n}\n82.99% {\r\n    transform: translate(0, 100px);\n}\n83% {\r\n    transform: translate(0, -100px);\n}\n90.89% {\r\n    transform: translate(0, 100px);\n}\n90.9% {\r\n    transform: translate(0, -100px);\n}\n99.99% {\r\n    transform: translate(0, 100px);\n}\n100% {\r\n    transform: translate(0, -100px);\n}\n}\n@-webkit-keyframes ld-slot-px-data-v-5e7ff57a {\n0% {\r\n    transform: translate(0, -100px);\n}\n9.09% {\r\n    transform: translate(0, 100px);\n}\n9.1% {\r\n    transform: translate(0, -100px);\n}\n16.99% {\r\n    transform: translate(0, 100px);\n}\n17% {\r\n    transform: translate(0, -100px);\n}\n23.79% {\r\n    transform: translate(0, 100px);\n}\n23.8% {\r\n    transform: translate(0, -100px);\n}\n29.59% {\r\n    transform: translate(0, 100px);\n}\n29.6% {\r\n    transform: translate(0, -100px);\n}\n34.49% {\r\n    transform: translate(0, 100px);\n}\n34.5% {\r\n    transform: translate(0, -100px);\n}\n38.49% {\r\n    transform: translate(0, 100px);\n}\n38.5% {\r\n    transform: translate(0, -100px);\n}\n41.79% {\r\n    transform: translate(0, 100px);\n}\n41.8% {\r\n    transform: translate(0, -100px);\n}\n44.39% {\r\n    transform: translate(0, 100px);\n}\n44.4% {\r\n    transform: translate(0, -100px);\n}\n46.29% {\r\n    transform: translate(0, 100px);\n}\n46.3% {\r\n    transform: translate(0, -100px);\n}\n47.79% {\r\n    transform: translate(0, 100px);\n}\n47.8% {\r\n    transform: translate(0, -100px);\n}\n48.79% {\r\n    transform: translate(0, 100px);\n}\n48.8% {\r\n    transform: translate(0, -100px);\n}\n49.39% {\r\n    transform: translate(0, 100px);\n}\n49.4% {\r\n    transform: translate(0, -100px);\n}\n49.79% {\r\n    transform: translate(0, 100px);\n}\n49.8% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n49.99% {\r\n    transform: translate(0, 100px);\n}\n50% {\r\n    transform: translate(0, -100px);\n}\n50.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n50.2% {\r\n    transform: translate(0, -100px);\n}\n50.59% {\r\n    transform: translate(0, 100px);\n}\n50.6% {\r\n    transform: translate(0, -100px);\n}\n51.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n51.2% {\r\n    transform: translate(0, -100px);\n}\n52.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n52.2% {\r\n    transform: translate(0, -100px);\n}\n53.690000000000005% {\r\n    transform: translate(0, 100px);\n}\n53.7% {\r\n    transform: translate(0, -100px);\n}\n55.59% {\r\n    transform: translate(0, 100px);\n}\n55.6% {\r\n    transform: translate(0, -100px);\n}\n58.190000000000005% {\r\n    transform: translate(0, 100px);\n}\n58.2% {\r\n    transform: translate(0, -100px);\n}\n61.49% {\r\n    transform: translate(0, 100px);\n}\n61.5% {\r\n    transform: translate(0, -100px);\n}\n65.49% {\r\n    transform: translate(0, 100px);\n}\n65.5% {\r\n    transform: translate(0, -100px);\n}\n70.39% {\r\n    transform: translate(0, 100px);\n}\n70.4% {\r\n    transform: translate(0, -100px);\n}\n76.19% {\r\n    transform: translate(0, 100px);\n}\n76.2% {\r\n    transform: translate(0, -100px);\n}\n82.99% {\r\n    transform: translate(0, 100px);\n}\n83% {\r\n    transform: translate(0, -100px);\n}\n90.89% {\r\n    transform: translate(0, 100px);\n}\n90.9% {\r\n    transform: translate(0, -100px);\n}\n99.99% {\r\n    transform: translate(0, 100px);\n}\n100% {\r\n    transform: translate(0, -100px);\n}\n}\n.ld.ld-slot-px[data-v-5e7ff57a] {\r\n  -webkit-animation: ld-slot-px-data-v-5e7ff57a 6s infinite linear;\r\n  animation: ld-slot-px-data-v-5e7ff57a 6s infinite linear;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.navbar[data-v-40c106f7] {\r\n  z-index: 3;\n}\n.navbar .profile-image[data-v-40c106f7] {\r\n  border-radius: 50%;\r\n  width: 30px;\r\n  height: 30px;\r\n  overflow: hidden;\r\n  display: inline-block;\n}\n.navbar .profile-image img[data-v-40c106f7] {\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  width: 100%;\r\n  height: 100%;\n}\n.navbar .left img[data-v-40c106f7] {    \r\n  height: 25px;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\n}\n.navbar .title h1[data-v-40c106f7], .navbar .title span[data-v-40c106f7] {\r\n  font-family: \"Proxima Nova Rg\";\r\n  font-weight: normal;\n}\n.navbar .title[data-v-40c106f7] {\r\n  text-align: center;\n}\n.navbar .title span[data-v-40c106f7] {\r\n  font-size: 13px;\n}\n.navbar .active-status[data-v-40c106f7] {\r\n  color: #fff;\n}\n.message-field[data-v-40c106f7] {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  display: flex;\r\n  background-color: #fff;\r\n  border-top: 1px solid #bbbcbc;\r\n  padding: 10px 15px;\r\n  align-items: center;\n}\n.message-field .attach img[data-v-40c106f7],\r\n.message-field .photo img[data-v-40c106f7] {\r\n  width: 25px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  -o-object-position: center;\r\n     object-position: center;\n}\n.message-field .attach img[data-v-40c106f7] {\r\n  margin-left: 10px;\r\n  margin-right: 10px;\n}\n.message-field .input[data-v-40c106f7] {\r\n  width: 100%;\n}\n.message-field .input input[data-v-40c106f7] {\r\n  border: none;\r\n  outline: none;\r\n  width: 100%;\r\n  color: #7c7c7c;  \r\n  font-family: \"Proxima Nova Rg\";\n}\n.message-field .send[data-v-40c106f7] {\r\n  margin-left: auto;\n}\n.message-field .send img[data-v-40c106f7] {\r\n  width: 30px;\n}\n.message-poligon[data-v-40c106f7] {\r\n  background-color: #f9fafc;\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 15px;\r\n  padding-top: 65px;\r\n  padding-bottom: 65px;\r\n  overflow-x: none;\r\n  overflow-y: auto;\n}\n.message-poligon .message[data-v-40c106f7] {\r\n  display: inline-block;\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n  padding: 15px 30px;\r\n  margin-bottom: 20px;\r\n  border-radius: 4px;\r\n  color: #737373;\r\n  font-family: \"Proxima Nova Rg\";  \r\n  font-weight: normal;\r\n  background-color: #fff;\r\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);\r\n  position: relative;\n}\n.message-poligon .message.me[data-v-40c106f7] {\r\n  background-color: #6e5694;\r\n  margin-left: auto;\r\n  color: #fff;\n}\n.message.me[data-v-40c106f7]:after {\r\n  content: '';\r\n  background-color: #6e5694;\r\n  position: absolute;\r\n  bottom: 0px;\r\n  right: -10px;\r\n  width: 15px;\r\n  height: 13px;\r\n  border-left: none;\r\n  border-right: none;\r\n  border-top: none;\n}\n.message.me[data-v-40c106f7]:before {\r\n  content: '';\r\n  background-color: #f9fafc;\r\n  position: absolute;\r\n  z-index: 2;\r\n  bottom: 0;\r\n  right: -15px;\r\n  width: 15px;\r\n  height: 15px;  \r\n  border-bottom-left-radius: 50px 50px;\n}\n.message[data-v-40c106f7]:not(.me) {\r\n  border-bottom-left-radius: 0;\n}\n.message[data-v-40c106f7]:not(.me):after {\r\n  content: '';\r\n  background-color: #fff;\r\n  position: absolute;\r\n  bottom: 0px;\r\n  left: -14px;\r\n  width: 15px;\r\n  height: 15px;\r\n  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1), 0 2px 0px 0 rgba(0, 0, 0, 0.02);\n}\n.message[data-v-40c106f7]:not(.me):before {\r\n  content: '';\r\n  background-color: #f9fafc;\r\n  position: absolute;\r\n  z-index: 2;\r\n  bottom: 0px;\r\n  left: -15px;\r\n  width: 15px;\r\n  height: 15px;\r\n  border-bottom-right-radius: 50px 50px;\r\n  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1), 0 2px 0px 0 rgba(0, 0, 0, 0.02);\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.dialogs[data-v-1d9732dc] {\n  padding-top: 75px;\n}\n.search-bar[data-v-1d9732dc] {\n  padding: 15px;\n  background-color: #fff;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 50px;\n}\n.input-search[data-v-1d9732dc] {\n  background-color: #ceced2;\n  border-radius: 4px;\n  border: none;\n  outline: none;\n  color: #828282;  \n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  font-size: 16px;\n  width: 100%;\n  padding: 8px 15px;\n}\n.input-search[data-v-1d9732dc]::-webkit-input-placeholder {\n  color: #828282;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  text-align: center;\n}\n.input-search[data-v-1d9732dc]::-moz-placeholder {\n  color: #828282;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  text-align: center;\n}\n.input-search[data-v-1d9732dc]:-ms-input-placeholder {\n  color: #828282;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  text-align: center;\n}\n.input-search[data-v-1d9732dc]::-ms-input-placeholder {\n  color: #828282;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  text-align: center;\n}\n.input-search[data-v-1d9732dc]::placeholder {\n  color: #828282;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  text-align: center;\n}\n.dialogs[data-v-1d9732dc] {\n  background-color: #fff;\n  min-height: 100vh;  \n  padding-left: 15px;\n}\n.dialogs .dialog[data-v-1d9732dc] {\n  display: flex;\n  align-items: center;\n}\n.dialogs .dialog .receiver-img[data-v-1d9732dc] {\n  max-width: 120px;\n  padding: 10px 10px 10px 0;\n}\n.dialogs .dialog .receiver-img img[data-v-1d9732dc] {\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.dialogs .dialog .receiver-info[data-v-1d9732dc] {\n  padding: 10px 0;\n  border-bottom: 1px solid #b2b2b2;\n  padding-right: 15px;\n  width: 100%;\n}\n.dialogs .dialog:last-child .receiver-info[data-v-1d9732dc] {\n  border-bottom: none;\n}\n.dialogs .dialog .title[data-v-1d9732dc] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 10px;\n}\n.dialogs .dialog .title h1[data-v-1d9732dc] {  \n  font-family: \"Proxima Nova Rg\";\n  font-weight: bold;\n  font-size: 20px;\n  color: #434343;\n}\n.dialogs .dialog .title span[data-v-1d9732dc] {\n  color: #666666;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  font-size: 18px;\n}\n.dialogs .dialog .short p[data-v-1d9732dc] {\n  color: #666666;\n  font-family: \"Proxima Nova Rg\";\n  font-weight: normal;\n  font-size: 18px;\n}\n", ""]);
 
 // exports
 
@@ -13451,6 +13695,96 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Socials.vue?vue&type=style&index=0&id=61e83d0b&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Socials.vue?vue&type=style&index=0&id=61e83d0b&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -25596,52 +25930,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0&":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0& ***!
-  \**********************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "ul",
-      _vm._l(_vm.dialogs, function(d, index) {
-        return _c("li", { key: index }, [
-          _c(
-            "a",
-            {
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.onClickDialog(d)
-                }
-              }
-            },
-            [_vm._v("\n        " + _vm._s(d.recipient.name) + "\n      ")]
-          )
-        ])
-      }),
-      0
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MenuBar.vue?vue&type=template&id=1c77ed99&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MenuBar.vue?vue&type=template&id=1c77ed99& ***!
@@ -25676,14 +25964,18 @@ var render = function() {
       "div",
       {
         staticClass: "item",
-        class: { active: _vm.$route.name == "chat" },
+        class: { active: _vm.$route.name == "dialogs" },
         on: {
           click: function($event) {
-            return _vm.$router.push({ name: "chat" })
+            return _vm.$router.push({ name: "dialogs" })
           }
         }
       },
-      [_c("img", { attrs: { src: "/images/menu-bar/chat.png", alt: "chat" } })]
+      [
+        _c("img", {
+          attrs: { src: "/images/menu-bar/chat.png", alt: "dialogs" }
+        })
+      ]
     ),
     _vm._v(" "),
     _c(
@@ -25721,76 +26013,6 @@ var render = function() {
         })
       ]
     )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Messages.vue?vue&type=template&id=62dade92&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Messages.vue?vue&type=template&id=62dade92& ***!
-  \***********************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "ul",
-      _vm._l(_vm.messages, function(m, index) {
-        return _c("li", { key: index }, [
-          _vm._v("\n      " + _vm._s(m.message) + "\n    ")
-        ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c("form", [
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.message,
-            expression: "message"
-          }
-        ],
-        attrs: { cols: "30", rows: "10" },
-        domProps: { value: _vm.message },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.message = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.onSendMessage($event)
-            }
-          }
-        },
-        [_vm._v("Send")]
-      )
-    ])
   ])
 }
 var staticRenderFns = []
@@ -25924,6 +26146,40 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    [
+      _vm.spinner
+        ? _c("div", { staticClass: "ld ld-spinner ld-spin" })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/layouts/Private.vue?vue&type=template&id=0c949d62&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layouts/Private.vue?vue&type=template&id=0c949d62& ***!
@@ -26000,6 +26256,177 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "navbar" }, [
+      _c("div", { staticClass: "action left" }, [
+        _c(
+          "a",
+          {
+            attrs: { href: "#" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.$router.go(-1)
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: { src: "/images/navbar/back-icon.png", alt: "btn-prev" }
+            })
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "title" }, [
+        _vm.dialog.opponent
+          ? _c("h1", [_vm._v(_vm._s(_vm.dialog.opponent.name))])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("span", { staticClass: "active-status" }, [_vm._v("online")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "action right" }, [
+        _c("a", { staticClass: "profile-image", attrs: { href: "#" } }, [
+          _vm.dialog.opponent
+            ? _c("img", {
+                attrs: { src: _vm.getPhoto(_vm.dialog.opponent), alt: "" }
+              })
+            : _vm._e()
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "message-poligon", attrs: { id: "messages" } },
+      _vm._l(_vm.messages, function(m, index) {
+        return _c(
+          "div",
+          {
+            key: index + "-message",
+            staticClass: "message",
+            class: { me: _vm.isMeMessage(m) }
+          },
+          [_vm._v("\n        " + _vm._s(m.message) + "\n      ")]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.onSendMessage($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "message-field" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "input" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.message,
+                  expression: "message"
+                }
+              ],
+              attrs: { type: "text", placeholder: "Type message..." },
+              domProps: { value: _vm.message },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.message = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "send" }, [
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.onSendMessage($event)
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "/images/chat/icon-send1.png",
+                    alt: "icon-send"
+                  }
+                })
+              ]
+            )
+          ])
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "photo" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", {
+          attrs: { src: "/images/chat/camera-icon.png", alt: "camera" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "attach" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", {
+          attrs: { src: "/images/chat/attach-icon.png", alt: "camera" }
+        })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dashboard.vue?vue&type=template&id=1f79daf6&":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dashboard.vue?vue&type=template&id=1f79daf6& ***!
@@ -26018,6 +26445,144 @@ var render = function() {
   return _c("div", { staticClass: "settings" })
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "search-bar" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.filter.query,
+              expression: "filter.query"
+            }
+          ],
+          staticClass: "input-search",
+          attrs: {
+            type: "text",
+            autofocus: "autofocus",
+            placeholder: "Search for message or user`"
+          },
+          domProps: { value: _vm.filter.query },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.filter, "query", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "dialogs" },
+        _vm._l(_vm.dialogsFiltered, function(d, index) {
+          return _c(
+            "div",
+            {
+              key: index + "-dialog",
+              staticClass: "dialog",
+              on: {
+                click: function($event) {
+                  return _vm.onClickDialog(d)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "receiver-img" }, [
+                _c("img", {
+                  attrs: { src: _vm.getPhoto(d.opponent), alt: "receiver" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "receiver-info" }, [
+                _c("div", { staticClass: "title" }, [
+                  _c("h1", [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(d.opponent.name) +
+                        "\n            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(d.date_last_message) +
+                        "\n            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "short" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(d.context_last_message) +
+                        "\n            "
+                    )
+                  ])
+                ])
+              ])
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("menu-bar")
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar" }, [
+      _c("div", { staticClass: "action left" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Edit")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "title" }, [_c("h1", [_vm._v("Chats")])]),
+      _vm._v(" "),
+      _c("div", { staticClass: "action right" }, [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("img", {
+            attrs: { src: "/images/navbar/icon-new-chat.png", alt: "btn-eidt" }
+          })
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -26122,10 +26687,16 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { staticClass: "btn", attrs: { type: "submit" } }, [
-              _vm._v("sigin in")
-            ])
-          ]
+            _c(
+              "l-button",
+              {
+                staticClass: "btn",
+                attrs: { type: "submit", spinner: _vm.spinner }
+              },
+              [_vm._v("sigin in")]
+            )
+          ],
+          1
         )
       ]),
       _vm._v(" "),
@@ -26485,10 +27056,16 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { staticClass: "btn", attrs: { type: "submit" } }, [
-              _vm._v("sign up")
-            ])
-          ]
+            _c(
+              "l-button",
+              {
+                staticClass: "btn",
+                attrs: { type: "submit", spinner: _vm.spinner }
+              },
+              [_vm._v("sigin up")]
+            )
+          ],
+          1
         )
       ]),
       _vm._v(" "),
@@ -42765,6 +43342,23 @@ var request = function request(url, data) {
     }
 
     return Promise.resolve(json);
+  })["catch"](function (e) {
+    var errors = e.response.data.errors;
+
+    if (errors) {
+      Object.values(errors).forEach(function (e) {
+        e.forEach(function (error) {
+          vue__WEBPACK_IMPORTED_MODULE_0___default.a.toasted['error'](error, {
+            theme: "bubble",
+            containerClass: ["vue-notify", ['error']],
+            position: "top-center",
+            duration: 2000
+          });
+        });
+      });
+    }
+
+    return Promise.resolve(e.response);
   });
 };
 
@@ -42780,8 +43374,11 @@ var messages = {
   getDialogs: function getDialogs() {
     return request('user/dialogs');
   },
-  getMessages: function getMessages(dialog) {
-    return request("user/message/".concat(dialog.id));
+  getDialog: function getDialog(dialog_id) {
+    return request("user/dialog/".concat(dialog_id));
+  },
+  getMessages: function getMessages(dialog_id) {
+    return request("user/message/".concat(dialog_id));
   },
   sendMessage: function sendMessage(dialog, data) {
     return request("user/message/".concat(dialog.id), data, 'post');
@@ -42865,75 +43462,6 @@ new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
 
 /***/ }),
 
-/***/ "./resources/js/components/Dialogs.vue":
-/*!*********************************************!*\
-  !*** ./resources/js/components/Dialogs.vue ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dialogs.vue?vue&type=template&id=4c1a6fe0& */ "./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0&");
-/* harmony import */ var _Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dialogs.vue?vue&type=script&lang=js& */ "./resources/js/components/Dialogs.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Dialogs.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Dialogs.vue?vue&type=script&lang=js&":
-/*!**********************************************************************!*\
-  !*** ./resources/js/components/Dialogs.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dialogs.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0& ***!
-  \****************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=template&id=4c1a6fe0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dialogs.vue?vue&type=template&id=4c1a6fe0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_4c1a6fe0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/MenuBar.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/MenuBar.vue ***!
@@ -42998,75 +43526,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuBar_vue_vue_type_template_id_1c77ed99___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuBar_vue_vue_type_template_id_1c77ed99___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Messages.vue":
-/*!**********************************************!*\
-  !*** ./resources/js/components/Messages.vue ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Messages.vue?vue&type=template&id=62dade92& */ "./resources/js/components/Messages.vue?vue&type=template&id=62dade92&");
-/* harmony import */ var _Messages_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Messages.vue?vue&type=script&lang=js& */ "./resources/js/components/Messages.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Messages_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Messages.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Messages.vue?vue&type=script&lang=js&":
-/*!***********************************************************************!*\
-  !*** ./resources/js/components/Messages.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Messages_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Messages.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Messages.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Messages_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Messages.vue?vue&type=template&id=62dade92&":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/components/Messages.vue?vue&type=template&id=62dade92& ***!
-  \*****************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Messages.vue?vue&type=template&id=62dade92& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Messages.vue?vue&type=template&id=62dade92&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Messages_vue_vue_type_template_id_62dade92___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -43250,26 +43709,109 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: Dialogs, Messages, Slider, Socials */
+/*! exports provided: Slider, Socials, lButton */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Dialogs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dialogs */ "./resources/js/components/Dialogs.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Dialogs", function() { return _Dialogs__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Slider */ "./resources/js/components/Slider.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Slider", function() { return _Slider__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _Messages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Messages */ "./resources/js/components/Messages.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Messages", function() { return _Messages__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+/* harmony import */ var _Socials__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Socials */ "./resources/js/components/Socials.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Socials", function() { return _Socials__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Slider */ "./resources/js/components/Slider.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Slider", function() { return _Slider__WEBPACK_IMPORTED_MODULE_2__["default"]; });
-
-/* harmony import */ var _Socials__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Socials */ "./resources/js/components/Socials.vue");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Socials", function() { return _Socials__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+/* harmony import */ var _lButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lButton */ "./resources/js/components/lButton.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lButton", function() { return _lButton__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 
 
 
+
+
+/***/ }),
+
+/***/ "./resources/js/components/lButton.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/lButton.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props& */ "./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props&");
+/* harmony import */ var _lButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lButton.vue?vue&type=script&lang=js& */ "./resources/js/components/lButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& */ "./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _lButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "5e7ff57a",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/lButton.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/lButton.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/lButton.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./lButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=style&index=0&id=5e7ff57a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_style_index_0_id_5e7ff57a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props& ***!
+  \********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/lButton.vue?vue&type=template&id=5e7ff57a&scoped=true&v-bind=%24props&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_lButton_vue_vue_type_template_id_5e7ff57a_scoped_true_v_bind_24props___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -43418,6 +43960,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/mixins/profile.js":
+/*!****************************************!*\
+  !*** ./resources/js/mixins/profile.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    getPhoto: function getPhoto(profile) {
+      return profile.avatar ? profile.avatar : '//placehold.it/100x100';
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/router/index.js":
 /*!**************************************!*\
   !*** ./resources/js/router/index.js ***!
@@ -43462,6 +44023,22 @@ var isAuth = function isAuth(to, from, next) {
       beforeEnter: isAuth,
       meta: {
         transition: 'fade'
+      }
+    }, {
+      path: 'dialogs',
+      name: 'dialogs',
+      component: _views__WEBPACK_IMPORTED_MODULE_3__["Dialogs"],
+      beforeEnter: isAuth,
+      meta: {
+        transition: 'fade'
+      }
+    }, {
+      path: 'chat/:dialog',
+      name: 'chat',
+      component: _views__WEBPACK_IMPORTED_MODULE_3__["Chat"],
+      beforeEnter: isAuth,
+      meta: {
+        transition: 'slide-right'
       }
     }]
   }, {
@@ -43543,8 +44120,7 @@ var Auth = {
   actions: {
     register: function register(_ref, payload) {
       var commit = _ref.commit;
-      return _api__WEBPACK_IMPORTED_MODULE_0__["default"].register(payload).then(function (r) {// ...
-      });
+      return _api__WEBPACK_IMPORTED_MODULE_0__["default"].register(payload);
     },
     login: function login(_ref2, payload) {
       var commit = _ref2.commit;
@@ -43572,6 +44148,7 @@ var messages = {
   namespaced: true,
   state: {
     dialogs: [],
+    dialog: {},
     current: false,
     messages: []
   },
@@ -43584,19 +44161,26 @@ var messages = {
         commit('setDailogs', data);
       });
     },
-    setCurrentDialog: function setCurrentDialog(_ref2, payload) {
+    getDialog: function getDialog(_ref2, dialog_id) {
       var commit = _ref2.commit;
+      return _api__WEBPACK_IMPORTED_MODULE_0__["default"].getDialog(dialog_id).then(function (r) {
+        var data = r.data.data;
+        commit('setDialog', data);
+      });
+    },
+    setCurrentDialog: function setCurrentDialog(_ref3, payload) {
+      var commit = _ref3.commit;
       commit('setCurrentDialog', payload);
     },
-    getMessages: function getMessages(_ref3, payload) {
-      var commit = _ref3.commit;
+    getMessages: function getMessages(_ref4, payload) {
+      var commit = _ref4.commit;
       return _api__WEBPACK_IMPORTED_MODULE_0__["default"].getMessages(payload).then(function (r) {
         var data = r.data.data;
         commit('setMessages', data);
       });
     },
-    sendMessage: function sendMessage(_ref4, payload) {
-      var commit = _ref4.commit;
+    sendMessage: function sendMessage(_ref5, payload) {
+      var commit = _ref5.commit;
       return _api__WEBPACK_IMPORTED_MODULE_0__["default"].sendMessage(payload.dialog, payload.data);
     }
   },
@@ -43609,6 +44193,9 @@ var messages = {
     },
     setMessages: function setMessages(state, payload) {
       state.messages = payload;
+    },
+    setDialog: function setDialog(state, payload) {
+      state.dialog = payload;
     }
   }
 };
@@ -43748,6 +44335,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/Chat.vue":
+/*!*************************************!*\
+  !*** ./resources/js/views/Chat.vue ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chat.vue?vue&type=template&id=40c106f7&scoped=true& */ "./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true&");
+/* harmony import */ var _Chat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chat.vue?vue&type=script&lang=js& */ "./resources/js/views/Chat.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& */ "./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Chat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "40c106f7",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/Chat.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/Chat.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./resources/js/views/Chat.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Chat.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=style&index=0&id=40c106f7&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_style_index_0_id_40c106f7_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Chat.vue?vue&type=template&id=40c106f7&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Chat.vue?vue&type=template&id=40c106f7&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chat_vue_vue_type_template_id_40c106f7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/views/Dashboard.vue":
 /*!******************************************!*\
   !*** ./resources/js/views/Dashboard.vue ***!
@@ -43812,6 +44486,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_1f79daf6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_1f79daf6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/Dialogs.vue":
+/*!****************************************!*\
+  !*** ./resources/js/views/Dialogs.vue ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true& */ "./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true&");
+/* harmony import */ var _Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dialogs.vue?vue&type=script&lang=js& */ "./resources/js/views/Dialogs.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& */ "./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "1d9732dc",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/views/Dialogs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/views/Dialogs.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./resources/js/views/Dialogs.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=style&index=0&id=1d9732dc&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_style_index_0_id_1d9732dc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Dialogs.vue?vue&type=template&id=1d9732dc&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dialogs_vue_vue_type_template_id_1d9732dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -44240,7 +45001,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************!*\
   !*** ./resources/js/views/index.js ***!
   \*************************************/
-/*! exports provided: Welcome, Login, Register, App, NotFound, Dashboard, Profile */
+/*! exports provided: Welcome, Login, Register, App, Dialogs, NotFound, Dashboard, Profile, Chat */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44265,6 +45026,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _Profile_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Profile.vue */ "./resources/js/views/Profile.vue");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Profile", function() { return _Profile_vue__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
+/* harmony import */ var _Chat_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Chat.vue */ "./resources/js/views/Chat.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Chat", function() { return _Chat_vue__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+
+/* harmony import */ var _Dialogs_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Dialogs.vue */ "./resources/js/views/Dialogs.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Dialogs", function() { return _Dialogs_vue__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+
+
 
 
 

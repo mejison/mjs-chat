@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function() {
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('login', 'AuthController@login');
+    Route::post('register', 'AuthController@register');
 
     Route::group(['prefix' => 'profile', 'middleware' => 'auth:api'], function () {
         Route::get('', 'ProfileController@getProfile');
@@ -23,6 +24,7 @@ Route::group(['prefix' => 'v1'], function() {
     });
 
     Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function() {
+        Route::get('dialog/{dialog}', 'DialogsController@getOne');
         Route::get('dialogs', 'DialogsController@getAll');
         Route::get('message/{dialog}', 'MessagesController@getAll');
         Route::post('message/{dialog}', 'MessagesController@send');        

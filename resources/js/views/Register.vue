@@ -44,8 +44,8 @@
           v-validate="'required'"
           :class="{'has-error': errors.has('password_confirmation')}"
           v-model="signup.password_confirmation"
-        />
-        <button type="submit" class="btn">sign up</button>
+        />        
+        <l-button type="submit" class="btn" :spinner="spinner">sigin up</l-button>        
       </form>        
     </div>
     <socials />
@@ -56,15 +56,17 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import { Socials } from '../components';
+import { Socials, lButton } from '../components';
 
 export default {
   name: 'Register',
   components: {
     Socials,
+    lButton,
   },
   data() {
     return {
+      spinner: false,
       signup: {
         email: '',
         name: '',
@@ -76,15 +78,22 @@ export default {
   methods: {
     ...mapActions('Auth', ['register']),    
     onSubmitSignUp() {
+      this.spinner = true;
        this.$validator.validate().then((res) => {
         if(res) {
-          this.login(this.signup).then(r => {
+          this.register(this.signup).then(r => {
+            this.spinner = false;
             let { data } = r.data
             if (data.access_token) {
               this.$cookie.set('token', data.access_token)
+               setTimeout(() => {
+                this.$router.push({name: 'profile'})
+              }, 2000)
             }        
           })
+          return 
         }
+        this.spinner = false;
       })  
     },
   }

@@ -4,6 +4,7 @@ const messages = {
   namespaced: true,
   state: {
     dialogs: [],
+    dialog: {},
     current: false,
     messages: [],
   },
@@ -13,6 +14,12 @@ const messages = {
       return api.getDialogs().then(r => {
         let { data } = r.data
         commit('setDailogs', data);
+      })
+    },
+    getDialog({ commit }, dialog_id) {
+      return api.getDialog(dialog_id).then(r => {
+        let { data } = r.data
+        commit('setDialog', data);
       })
     },
     setCurrentDialog({ commit }, payload) {
@@ -37,6 +44,9 @@ const messages = {
     },
     setMessages(state, payload) {
       state.messages = payload
+    },
+    setDialog(state, payload) {
+      state.dialog = payload
     },
   },
 }
